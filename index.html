@@ -289,6 +289,16 @@ footer{
   line-height:1.7;margin-bottom:14px;text-align:center;
 }
 .sh-note b{color:var(--accent)}
+
+/* 弹层里的转存提醒 */
+.sh-save-warn{
+  background:rgba(255,180,0,.10);
+  border:1px solid rgba(255,180,0,.45);
+  border-radius:12px;padding:12px 14px;margin-bottom:14px;
+}
+.sh-save-t{font-size:13.5px;font-weight:700;color:#e0a020;margin-bottom:5px}
+.sh-save-b{font-size:12px;color:var(--dim);line-height:1.75}
+.sh-save-b b{color:#e0a020}
 .sh-btn{
   display:flex;align-items:center;justify-content:center;gap:8px;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
@@ -430,6 +440,81 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .tip-extra-b{font-size:13px;color:var(--dim);line-height:1.75}
 .tip-extra-b b{color:var(--text)}
 .tip-thanks{text-align:center;font-size:12.5px;color:var(--dim2);margin-top:18px;opacity:.85}
+
+/* ============ 关于作者页 ============ */
+.about-wrap{max-width:480px;margin:0 auto;padding-top:6px}
+.about-card{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:26px 20px 22px;text-align:center;box-shadow:var(--shadow);
+}
+.about-avatar{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 14px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:grid;place-items:center;font-size:30px;
+  box-shadow:0 6px 22px rgba(242,112,156,.35);
+}
+.about-name{font-size:21px;font-weight:750;margin-bottom:5px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.about-slogan{font-size:12px;color:var(--dim2);margin-bottom:22px}
+.about-links{display:grid;gap:9px;text-align:left}
+.about-link{
+  display:flex;align-items:center;gap:12px;
+  background:var(--bg);border:1px solid var(--line);border-radius:12px;
+  padding:11px 13px;text-decoration:none;color:var(--text);
+  cursor:pointer;transition:.15s;
+}
+.about-link:hover{border-color:var(--accent);transform:translateY(-1px)}
+.al-ico{
+  width:34px;height:34px;border-radius:9px;flex:none;
+  display:grid;place-items:center;font-size:16px;
+}
+.al-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.al-lab{font-size:10.5px;color:var(--dim2)}
+.al-val{font-size:14.5px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.al-arrow{font-size:11px;color:var(--dim2);flex:none}
+
+/* 可跳转 + 可复制 的分隔式链接 */
+.about-link-split{padding:0;overflow:hidden;cursor:default}
+.about-link-split:hover{transform:none;border-color:var(--accent)}
+.al-jump{
+  flex:1;min-width:0;display:flex;align-items:center;gap:12px;
+  padding:11px 13px;text-decoration:none;color:var(--text);
+}
+.al-jump:hover{background:var(--accent-soft)}
+.al-static{cursor:default}
+.al-static:hover{background:transparent}
+.al-copy{
+  flex:none;align-self:stretch;
+  background:transparent;border:0;border-left:1px solid var(--line);
+  color:var(--accent);font-size:12px;font-weight:650;font-family:inherit;
+  padding:0 14px;cursor:pointer;transition:.15s;white-space:nowrap;
+}
+.al-copy:hover{background:var(--accent-soft)}
+.al-copy:active{background:var(--accent);color:#fff}
+.about-note{
+  margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--dim);line-height:1.8;
+}
+.about-note b{color:#e0a020}
+
+/* 我要反馈按钮 */
+.feedback-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;margin-top:20px;padding:13px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;border-radius:12px;text-decoration:none;
+  font-size:15px;font-weight:700;
+  box-shadow:0 5px 20px rgba(242,112,156,.3);
+  transition:.15s;
+}
+.feedback-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.feedback-btn:active{transform:scale(.99)}
+.about-tip{
+  text-align:center;font-size:11.5px;color:var(--dim2);
+  line-height:1.8;margin-top:16px;opacity:.85;
+}
 
 /* ============ 打开声明遮罩 ============ */
 #gate{
@@ -634,55 +719,77 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
     <div class="ft-avatar">🐟</div>
     <div class="ft-name"><em>偷吃的鱼</em></div>
     <div style="font-size:12px;color:var(--dim2)">原创设定 · 禁止搬运倒卖</div>
-
-    <!-- 转存提醒 -->
-    <div class="ft-warn">
-      <div class="ft-warn-title">⚠️ 请先转存 · 防止文件被举报丢失</div>
-      <div class="ft-warn-body">
-        网盘资源可能被恶意举报导致失效，<b>请务必先「转存」到自己网盘再下载</b>，并保存好本地备份。链接失效可凭抖音号或 QQ 找我补发。
-      </div>
-    </div>
-
-    <div class="ft-links">
-      <a class="ft-link" href="https://www.douyin.com/" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.7a4.8 4.8 0 0 1-2.9-1A4.9 4.9 0 0 1 15.3 3h-3v12.3a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.6V9.4a7.6 7.6 0 0 0 4.2 1.3V7.6a4.7 4.7 0 0 1 0-1z"/></svg>
-        <span><span class="lab">抖音</span> <b>@偷吃的鱼</b></span>
-      </a>
-      <span class="ft-link" style="cursor:default">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 3.2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm3.2 12.1h-1.8v-4.1h-2.8v4.1H8.8v-8h1.8v1.2c.5-.8 1.4-1.3 2.4-1.3 1.6 0 2.8 1.2 2.8 2.8v5.3z"/></svg>
-        <span><span class="lab">QQ</span> <b>2522382716</b></span>
-      </span>
-    </div>
-
-    <!-- 付费设定 -->
-    <div class="ft-pay">
-      <div class="ft-pay-badge">💎 付费设定</div>
-      <div class="ft-pay-text">
-        还有更多<b>独家付费设定</b>未公开<br>
-        加 QQ <b class="hl">2522382716</b> 咨询购买
-      </div>
-      <button class="ft-pay-btn" id="copyqq">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        复制 QQ 号
-      </button>
-    </div>
-
-    <!-- 打赏 -->
-    <div class="ft-tip">
-      <div class="ft-tip-title">☕ 喜欢的话可以打赏支持～</div>
-      <div class="ft-tip-qr" id="payqr">
-        <!-- 收款码位置：有图片就显示，没有就显示提示 -->
-      </div>
-      <div class="ft-tip-note">感谢每一位支持原创的宝子 💕</div>
-    </div>
-
-    <div class="ft-copy">
-      抖音号：<span class="hl">tcdy_520</span><br>
-      所有设定原文见百度网盘，点击任意卡片获取
-    </div>
-    <div class="ft-ver">v4.3 · 46 个设定</div>
+    <div class="ft-ver">v4.4 · 53 个设定</div>
   </div>
 </footer>
+
+<div id="page-about" class="page">
+<header>
+  <div class="hd">
+    <div class="logo">🐟</div>
+    <h1>关于作者<small>偷吃的鱼 · 联系方式</small></h1>
+  </div>
+</header>
+<main>
+  <div class="about-wrap">
+    <div class="about-card">
+      <div class="about-avatar">🐟</div>
+      <div class="about-name">偷吃的鱼</div>
+      <div class="about-slogan">原创设定作者 · 禁止搬运倒卖</div>
+
+      <div class="about-links">
+        <div class="about-link about-link-split">
+          <a class="al-jump" href="https://www.douyin.com/" target="_blank" rel="noopener">
+            <span class="al-ico" style="background:rgba(0,0,0,.45)">🎵</span>
+            <span class="al-main">
+              <span class="al-lab">抖音</span>
+              <span class="al-val">@偷吃的鱼</span>
+            </span>
+          </a>
+          <button class="al-copy" data-copy="tcdy_520">复制号</button>
+        </div>
+
+        <div class="about-link about-link-split">
+          <a class="al-jump" href="https://qun.qq.com/join.html?gc=1044867977" target="_blank" rel="noopener">
+            <span class="al-ico" style="background:rgba(78,203,143,.15)">👥</span>
+            <span class="al-main">
+              <span class="al-lab">QQ 群 · 点此进群</span>
+              <span class="al-val">104/486/7977</span>
+            </span>
+          </a>
+          <button class="al-copy" data-copy="1044867977">复制</button>
+        </div>
+
+        <div class="about-link about-link-split">
+          <span class="al-jump al-static">
+            <span class="al-ico" style="background:rgba(106,169,255,.15)">🐧</span>
+            <span class="al-main">
+              <span class="al-lab">QQ · 答疑 / 反馈 / 买设定</span>
+              <span class="al-val">2522382716</span>
+            </span>
+          </span>
+          <button class="al-copy" data-copy="2522382716">复制</button>
+        </div>
+      </div>
+
+      <a class="feedback-btn" href="https://qun.qq.com/join.html?gc=1044867977" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+        <span>我要反馈</span>
+      </a>
+
+      <div class="about-note">
+        有问题、想反馈、想买付费设定，都可以直接找我<br>
+        <b>除我之外收钱的都是骗子</b>
+      </div>
+    </div>
+
+    <div class="about-tip">
+      个人原创设定，禁止二改、外传、抄袭、洗稿<br>
+      喜欢的话可以去「打赏」页支持一下 💕
+    </div>
+  </div>
+</main>
+</div>
 
 <nav id="tabbar">
   <button class="tab active" data-page="home">
@@ -696,6 +803,10 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   <button class="tab" data-page="tip">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a5.5 5.5 0 0 0-7.8-7.8L12 1.8l-1 1a5.5 5.5 0 0 0-7.8 7.8L12 21.4z" transform="translate(0,1)"/></svg>
     <span>打赏</span>
+  </button>
+  <button class="tab" data-page="about">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+    <span>关于</span>
   </button>
 </nav>
 
@@ -716,101 +827,115 @@ const SITE = {
   },
   // 题材分类：速览页会按这些分组。每个设定可归多个类。
   // 常用类：高干 / 囚禁 / bl / gl / bg / 年上 / 骨科 / 修真 / 无限流 / 灵异 / 都市 / 年代
+  // 题材分类（大众化标签）：取向 bl/gl/bg/gb ｜关系 骨科/年上/年下/伪骨 ｜题材 人外/高干/囚禁/强制/重生/穿书/无限流/灵异/玄幻/修真/末世/ABO/sm ｜背景 现代/古风/校园/豪门/娱乐圈
+  // 【方案B】核心标签，新增「无cp向」
   cats: {
-    "殷慕白": ["小妈文学", "年上", "豪门"],
-    "江津":   ["都市", "现实向"],
-    "裴安":   ["囚禁", "灵异", "强制"],
-    "谢辞昀": ["修真", "仙侠"],
-    "赵迟云": ["救赎", "校园"],
-    "赵叙白": ["骨科", "囚禁"],
-    "段路安": ["都市", "职场"],
-    "柯河蓝": ["科技", "乙女"],
-    "克桑托斯": ["西幻", "囚禁", "强制"],
-    "周聿白": ["高干", "都市"],
-    "宋乐安": ["gb", "校园"],
-    "宋予谦": ["都市", "救赎"],
-    "封𫐄":  ["都市", "校园"],
-    "岚笙":   ["玄幻", "年上"],
-    "林墨弛": ["校园", "豪门"],
-    "温术":   ["文艺", "BE"],
-    "玄頞 / 玄安": ["玄幻", "囚禁"],
-    "祁述":   ["豪门", "救赎"],
-    "绍付安": ["高干", "都市"],
-    "西德叻·啡丝": ["西幻", "年上"],
-    "星际设定": ["科幻", "世界观"],
-    "炉鼎NP": ["修真", "快穿"],
-    "乙女游戏 · 我的第十年": ["科技", "乙女", "世界观"],
-    "网络直播": ["黑暗", "世界观"],
-    "傅北琛": ["高干", "霸总"],
-    "薄夜阑": ["bl", "死对头"],
-    "陆景熯": ["bl", "骨科", "救赎"],
-    "梁惋":   ["gl", "年上", "御姐"],
-    "尚璟宇": ["bl", "骨科", "救赎"],
-    "谢瑜渊": ["无限流", "修真"],
-    "宋箐逾": ["高干", "失忆"],
-    "浮屿（南山）": ["无限流", "末世"],
-    "江淮旭": ["高干", "sm", "年上"],
-    "闻敛":   ["暗网", "现代", "高干"],
-    "傅砚庭": ["高干", "娱乐圈", "上位者"],
-    "江时烬": ["暗网", "现代", "黑客"],
-    "谢临渊": ["穿书", "白切黑", "年下"],
-    "穆玉爛": ["年上", "豪门", "养父"],
-    "东厂总督": ["古风", "权谋"],
-    "东厂 · 世界观": ["古风", "世界观"],
-    "ABO设定": ["ABO", "世界观"],
-    "商玙洝": ["娱乐圈", "现代", "七情六欲"],
-    "傅承渊": ["高干", "豪门", "七情六欲"],
-    "七情六欲 · 世界观": ["世界观", "现代", "玄幻"],
-    "Q7综艺": ["综艺", "场景", "世界观"],
-    "举报M设定": ["sm", "黑暗"]
+    "殷慕白":       ["bg", "年下", "小妈文学", "豪门", "现代"],
+    "江津":         ["bg", "年上", "都市", "现代"],
+    "裴安":         ["bg", "强制", "囚禁", "灵异", "占有欲强"],
+    "谢辞昀":       ["bl", "人外", "玄幻", "修真"],
+    "赵迟云":       ["bg", "校园", "救赎", "虐心", "自卑"],
+    "赵叙白":       ["bg", "骨科", "强制", "囚禁", "疯批"],
+    "段路安":       ["bg", "都市", "冷淡", "现代"],
+    "柯河蓝":       ["bg", "现代", "冷淡"],
+    "克桑托斯":     ["bg", "人外", "囚禁", "强制", "西幻"],
+    "周聿白":       ["bg", "高干", "上位者", "禁欲"],
+    "宋乐安":       ["gb", "校园", "豪门", "年下"],
+    "宋予谦":       ["bg", "都市", "温柔", "救赎"],
+    "封𫐄":         ["bg", "校园", "白切黑", "现代"],
+    "岚笙":         ["bg", "人外", "年上", "粘人", "玄幻"],
+    "林墨弛":       ["bg", "校园", "豪门", "年下", "嘴硬心软"],
+    "温术":         ["bg", "温柔", "虐心", "现代"],
+    "玄頞 / 玄安":   ["bl", "人外", "囚禁", "玄幻"],
+    "祁述":         ["bg", "豪门", "救赎", "自卑", "年上"],
+    "绍付安":       ["bg", "高干", "上位者", "禁欲"],
+    "西德叻·啡丝":   ["bg", "人外", "年上", "宗教", "西幻"],
+    "星际设定":     ["无cp向", "世界观", "ABO"],
+    "炉鼎NP":       ["无cp向", "修真", "快穿", "世界观"],
+    "乙女游戏 · 我的第十年": ["bg", "现代", "世界观"],
+    "网络直播":     ["无cp向", "灵异", "现代", "世界观"],
+    "傅北琛":       ["bg", "高干", "霸总", "豪门", "现代"],
+    "薄夜阑":       ["bl", "死对头", "豪门", "年下"],
+    "陆景熯":       ["bl", "骨科", "伪骨", "救赎", "偏执"],
+    "梁惋":         ["gl", "年上", "御姐", "现代"],
+    "尚璟宇":       ["bl", "骨科", "救赎", "虐心", "现代"],
+    "谢瑜渊":       ["bl", "无限流", "修真", "古风"],
+    "宋箐逾":       ["bg", "高干", "失忆", "豪门", "现代"],
+    "浮屿（南山）":   ["bl", "无限流", "末世", "现代"],
+    "江淮旭":       ["bl", "高干", "sm", "年上"],
+    "穆玉爛":       ["bg", "年上", "伪骨", "豪门", "现代"],
+    "闻敛":         ["bl", "高干", "现代"],
+    "傅砚庭":       ["bl", "高干", "上位者", "年上"],
+    "江时烬":       ["bl", "年下", "现代", "偏执"],
+    "谢临渊":       ["bl", "穿书", "年下", "白切黑", "占有欲强"],
+    "东厂总督":     ["bl", "古风", "权谋", "年上"],
+    "东厂 · 世界观": ["无cp向", "古风", "权谋", "世界观"],
+    "ABO设定":      ["无cp向", "ABO", "世界观"],
+    "商玙洝":       ["bl", "人外", "娱乐圈", "现代"],
+    "傅承渊":       ["bl", "高干", "豪门", "人外", "现代"],
+    "七情六欲 · 世界观": ["无cp向", "人外", "玄幻", "世界观"],
+    "Q7综艺":       ["无cp向", "现代", "世界观"],
+    "穆尚化":       ["无cp向", "团宠", "豪门", "年上", "现代"],
+    "陈毓":         ["无cp向", "团宠", "豪门", "温柔", "现代"],
+    "穆淮旭":       ["无cp向", "团宠", "豪门", "年上", "现代"],
+    "穆淮安":       ["无cp向", "团宠", "豪门", "年上", "温柔"],
+    "穆锦":         ["无cp向", "团宠", "豪门", "现代", "嘴硬心软"],
+    "言出法随 · 世界观": ["无cp向", "团宠", "人外", "玄学", "悬疑", "世界观"],
+    "举报M设定":     ["sm", "现代", "强制"]
   },
   items: [
-    { role:"殷慕白", file:"殷慕白.docx", sex:"男", age:"19", tags:["港圈富二代","小妈文学","年下","继子×小妈","睚眦必报","纨绔不羁","白发","183","年龄差2岁","先婚后爱","追妻火葬场","表面纨绔私下疯狗","查岗狂魔","粘人","现代","港圈"] },
-    { role:"江津", file:"江津.docx", sex:"男", age:"26", tags:["旧城区","混混×纹身师","捡猫文学","小苍兰","纯情","七年之痒","感情干涸","拧巴固执","默契冷淡","不离婚也不爱了","现实向","BE感","现代","都市"] },
-    { role:"裴安", file:"裴安.docx", sex:"男", age:"27", tags:["鬼魂丈夫","强制爱","占有欲爆表","强取豪夺","死后纠缠","微信控制","灵异契约","遗产绑定","只有你能看见我","人鬼情未了","阴间占有欲","无道德底线","表面温柔私下疯批","吃醋鬼魂","谁追你谁倒霉","死了也不放过你","灵异","现代"] },
-    { role:"谢辞昀", file:"谢辞昀.docx", sex:"男", age:"2784", tags:["玄幻","除妖师祖×渡劫小仙","扮猪吃老虎","装柔弱","病美人攻","表面清冷私下黏人","石像手工","失忆","符甩脸上","战力爆表装萌新","仙侠","非人类"] },
-    { role:"赵迟云", file:"赵迟云.docx", sex:"男", age:"—", tags:["普通人","自卑敏感","极端温柔","校园霸凌","原生家庭","窒息教育","木讷","游离感","疼痛才是真实","虎牙","186","慢热","需要被捡走","治愈向","救赎文","纯爱","校园"] },
-    { role:"赵叙白", file:"赵叙白新版.docx（另有旧版）", sex:"男", age:"—", tags:["兄妹","领养","年上","赵家太子爷","哥哥","外表高冷","私下疯狗","骚话连篇","哄骗","威胁","伪骨科","现代"] },
-    { role:"段路安", file:"gpt审核员.docx", sex:"男", age:"25", tags:["剑桥研究生","技术人员","冷感","话少","直球","高智商","现代","职场","理性"] },
-    { role:"柯河蓝", file:"乙女游戏.docx", sex:"男", age:"28", tags:["乙女游戏","全息模拟","高智能科技","神经连接","医疗研发","科幻","未来","男主"] },
-    { role:"克桑托斯", file:"克桑托斯 .docx", sex:"男", age:"19", tags:["希腊贵族","禁纯爱","性瘾","控制瘾","非人类","异食癖","西幻","暗黑","强制"] },
-    { role:"周聿白", file:"周聿白加强版.docx（另有md版）", sex:"男", age:"32", tags:["香港","政界","权贵","黑白两道","高知名度","强势","现代","都市","上位者"] },
-    { role:"宋乐安", file:"宋乐安 gb.docx", sex:"男", age:"17", tags:["gb","宋家小少爷","167","欺软怕硬","自大","霸凌者","现代","校园","反差"] },
-    { role:"宋予谦", file:"宋予谦.docx", sex:"男", age:"34", tags:["地理学家","179","老实","细节控","自卑","敏感","付出型人格","现代","治愈向"] },
-    { role:"封𫐄", file:"封𫐄.docx", sex:"男", age:"21", tags:["大学生","183","表面温柔","纯恶人","PUA","控制欲","现代","校园","暗黑"] },
-    { role:"岚笙", file:"岚笙.docx", sex:"男", age:"20", tags:["苗王嫡子","蛊术","反差感","温柔小狗","粘人","害羞","爱吃醋","占有欲强","示弱","苗族","现代","奇幻"] },
-    { role:"林墨弛", file:"林墨弛.docx", sex:"男", age:"17", tags:["林氏二儿子","182","狂傲不羁","嘴硬心软","敏感","痴迷","爱吃醋","会撒娇","现代","校园","豪门"] },
-    { role:"温术", file:"温术.docx（另有bg纯爱版）", sex:"男", age:"26", tags:["画家","已故","温柔人夫","wx幽灵","甜虐","画展初遇","左眼角小痣","见义勇为","高山流水遇知音","文艺","现代","慢热"] },
-    { role:"玄頞 / 玄安", file:"玄頞_玄安_双人格_蓝环章鱼.docx", sex:"男", age:"—", tags:["双人格","蓝环章鱼","深海","毒素","幻觉","军部最高指挥官","人兽互换","玄幻","非人类","强势"] },
-    { role:"祁述", file:"祁述.docx", sex:"男", age:"—", tags:["祁小少爷","187","阴暗","自卑","敏感","缺乏安全感","温和面具","深情","现代","豪门"] },
-    { role:"绍付安", file:"绍付安黄网主播设定.docx", sex:"男", age:"26", tags:["绍氏集团总裁","187","高智商","冷淡","禁欲","容易不耐烦","双面","现代","都市","上位者"] },
-    { role:"西德叻·啡丝", file:"西德叻·啡丝 .docx", sex:"男", age:"20", tags:["神父","养父","雅纳圣教堂","非人类","被敬仰","教导者","西幻","宗教","年上"] },
-    { role:"星际设定", file:"星际设定.docx", sex:"—", age:"—", tags:["星际科幻","雌性稀少","1:1000","国家婚配","精神力","虫族","繁衍","世界观","科幻"] },
-    { role:"炉鼎NP", file:"炉鼎np.docx", sex:"—", age:"—", tags:["快穿","修仙世界","系统","多条主线","单人线","双人线","修罗场","仙侠","世界观","任务系统"] },
-    { role:"乙女游戏 · 我的第十年", file:"乙女游戏.docx", sex:"—", age:"—", tags:["乙女游戏","全息模拟","3D环绕","神经连接","科技世界","科幻","世界观"] },
-    { role:"网络直播", file:"网络直播.docx", sex:"—", age:"—", tags:["暗网","直播","被入侵","强迫","悬疑","现代","场景设定","暗黑"] },
-    { role:"傅北琛", file:"傅北琛.docx（另有wx美化版）", sex:"男", age:"24", tags:["玛丽苏世界","霸总","恒海集团","未婚夫","读心","生理性喜欢","茉莉花","年上","打脸","恶毒女配","穿书","系统","189","现代","豪门"] },
-    { role:"薄夜阑", file:"做死后被死对头上了.txt", sex:"男", age:"24", tags:["死对头","双男","上海","顶级豪门","薄家小太子","小疯子","暗恋","青梅竹马","189","现代","都市"] },
-    { role:"陆景熯", file:"伪骨 bg.txt", sex:"男", age:"—", tags:["伪骨","领养","哥哥","中俄混血","蓝瞳","187","表面温柔","自卑","疯批","救赎","现代"] },
-    { role:"梁惋", file:"梁惋（拉拉）.txt", sex:"女", age:"23", tags:["百合","年上","梁家大小姐","拍卖会初遇","反差感","护短","直女掰弯","暗色系御姐","独生女","贵宾室","现代","御姐"] },
-    { role:"尚璟宇", file:"bl 自闭症（投稿）.txt", sex:"男", age:"21", tags:["骨科","哥哥","天才","自闭症","心理疾病","守护","虐心","救赎","BE感","现代","校园"] },
-    { role:"谢瑜渊", file:"女配完整版.txt", sex:"男", age:"—", tags:["无限流","快穿","原书男主","剑宗","修道天才","高冷","禁欲","护短","纯情","玄幻","系统"] },
-    { role:"宋箐逾", file:"失忆后联姻老公骗我说我特别爱他.txt", sex:"男", age:"—", tags:["失忆","联姻","白切黑","商圈大佬","可怜小狗","暗恋","189","先婚后爱","现代","豪门"] },
-    { role:"浮屿（南山）", file:"丧尸 h向美化版.txt", sex:"男", age:"—", tags:["无限流","丧尸","积分第一","战力第一","冷淡","190","长发","大佬","架空","游戏"] },
-    { role:"东厂总督", file:"东厂总督是邻国太子.txt", sex:"男", age:"—", tags:["古代","东厂","邻国太子","双面身份","权谋","大晟朝","赫朝","言情","宫廷"] },
-    { role:"ABO设定", file:"ABO  bg设定禁改bl.txt", sex:"—", age:"—", tags:["ABO","信息素","标记","S级","分化","特殊药剂","世界观","现代"] },
-    { role:"东厂 · 世界观", file:"东厂总督是邻国太子.txt", sex:"—", age:"—", tags:["大晟朝","赫朝","铁蹄十二部","玄京","古代","权谋","世界观"] },
-    { role:"江淮旭", file:"江淮旭.txt", sex:"男", age:"—", tags:["江家独子","中英混血","英国","只手遮天","sm圈天菜","浅蓝眼","爱开玩笑","上位者","引导型","占有欲高","爹系","商业聚会初遇","橘子味","监控式关注","圈套","现代","豪门","英伦"] },
-    { role:"闻敛", file:"七七的世界.txt", sex:"男", age:"23", tags:["暗网审核员","黑产小少爷","北美财阀","183","冷白皮","自大","目中无人","花钱解决","现代","暗网"] },
-    { role:"傅砚庭", file:"七七的世界.txt", sex:"男", age:"28", tags:["上海顶层","程心娱乐董事长","186","沉稳","占有欲强","三件套","上位者","现代","娱乐圈"] },
-    { role:"江时烬", file:"七七的世界.txt", sex:"男", age:"22", tags:["计算机天才","黑客","暗网第3","181","细框眼镜","泪痣","睚眦必报","心思缜密","现代","暗网"] },
-    { role:"谢临渊", file:"七七的世界.txt", sex:"男", age:"17", tags:["原书反派","白切黑","178","阴郁","独占欲","穿书","偏执","现代","校园"] },
-    { role:"穆玉爛", file:"穆玉爛.docx", sex:"男", age:"28", tags:["穆家小少爷","189","公狗腰","纨绔","矜持内敛","沉稳","养父","年上","现代","豪门"] },
-    { role:"商玙洝", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"男", age:"24", tags:["P1","色欲","七情六欲","一线明星","前男友","商家三子","富家阔少","国民男友","装纯","冷漠自私","漫画手","公狗腰","现代","娱乐圈"] },
-    { role:"傅承渊", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"男", age:"29", tags:["P2","贪婪","七情六欲","傅家掌权人","商业奇才","伪善","估价","掌控欲","千亿身价","古董","冷静","现代","豪门"] },
-    { role:"七情六欲 · 世界观", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"—", age:"—", tags:["色欲","贪婪","能量体系","高能量者","中能量者","低能量者","纯净度","阶级组合","商品化","利益化","现代","世界观"] },
-    { role:"Q7综艺", file:"q7综艺.docx", sex:"—", age:"—", tags:["综艺","3天2夜","1档普通综艺","2档恋综","3档密室逃脱","游戏机制","弹幕","场景扮演","现代","世界观"] },
-    { role:"举报M设定", file:"举报m设定.docx", sex:"女", age:"18", tags:["sm","dom/sub","小狗","m","举报","短篇","现代","角色扮演"] }
+    { role:"殷慕白", file:"殷慕白.docx", sex:"男", age:"19", tags:["bg", "年下", "小妈文学", "豪门", "现代"] },
+    { role:"江津", file:"江津.docx", sex:"男", age:"26", tags:["bg", "年上", "都市", "现代"] },
+    { role:"裴安", file:"裴安.docx", sex:"男", age:"27", tags:["bg", "强制", "囚禁", "灵异", "占有欲强"] },
+    { role:"谢辞昀", file:"谢辞昀.docx", sex:"男", age:"2784", tags:["bl", "人外", "玄幻", "修真"] },
+    { role:"赵迟云", file:"赵迟云.docx", sex:"男", age:"—", tags:["bg", "校园", "救赎", "虐心", "自卑"] },
+    { role:"赵叙白", file:"赵叙白新版.docx（另有旧版）", sex:"男", age:"—", tags:["bg", "骨科", "强制", "囚禁", "疯批"] },
+    { role:"段路安", file:"gpt审核员.docx", sex:"男", age:"25", tags:["bg", "都市", "冷淡", "现代"] },
+    { role:"柯河蓝", file:"乙女游戏.docx", sex:"男", age:"28", tags:["bg", "现代", "冷淡"] },
+    { role:"克桑托斯", file:"克桑托斯 .docx", sex:"男", age:"19", tags:["bg", "人外", "囚禁", "强制", "西幻"] },
+    { role:"周聿白", file:"周聿白加强版.docx（另有md版）", sex:"男", age:"32", tags:["bg", "高干", "上位者", "禁欲"] },
+    { role:"宋乐安", file:"宋乐安 gb.docx", sex:"男", age:"17", tags:["gb", "校园", "豪门", "年下"] },
+    { role:"宋予谦", file:"宋予谦.docx", sex:"男", age:"34", tags:["bg", "都市", "温柔", "救赎"] },
+    { role:"封𫐄", file:"封𫐄.docx", sex:"男", age:"21", tags:["bg", "校园", "白切黑", "现代"] },
+    { role:"岚笙", file:"岚笙.docx", sex:"男", age:"20", tags:["bg", "人外", "年上", "粘人", "玄幻"] },
+    { role:"林墨弛", file:"林墨弛.docx", sex:"男", age:"17", tags:["bg", "校园", "豪门", "年下", "嘴硬心软"] },
+    { role:"温术", file:"温术.docx（另有bg纯爱版）", sex:"男", age:"26", tags:["bg", "温柔", "虐心", "现代"] },
+    { role:"玄頞 / 玄安", file:"玄頞_玄安_双人格_蓝环章鱼.docx", sex:"男", age:"—", tags:["bl", "人外", "囚禁", "玄幻"] },
+    { role:"祁述", file:"祁述.docx", sex:"男", age:"—", tags:["bg", "豪门", "救赎", "自卑", "年上"] },
+    { role:"绍付安", file:"绍付安黄网主播设定.docx", sex:"男", age:"26", tags:["bg", "高干", "上位者", "禁欲"] },
+    { role:"西德叻·啡丝", file:"西德叻·啡丝 .docx", sex:"男", age:"20", tags:["bg", "人外", "年上", "宗教", "西幻"] },
+    { role:"星际设定", file:"星际设定.docx", sex:"—", age:"—", tags:["无cp向", "世界观", "ABO"] },
+    { role:"炉鼎NP", file:"炉鼎np.docx", sex:"—", age:"—", tags:["无cp向", "修真", "快穿", "世界观"] },
+    { role:"乙女游戏 · 我的第十年", file:"乙女游戏.docx", sex:"—", age:"—", tags:["bg", "现代", "世界观"] },
+    { role:"网络直播", file:"网络直播.docx", sex:"—", age:"—", tags:["无cp向", "灵异", "现代", "世界观"] },
+    { role:"傅北琛", file:"傅北琛.docx（另有wx美化版）", sex:"男", age:"24", tags:["bg", "高干", "霸总", "豪门", "现代"] },
+    { role:"薄夜阑", file:"做死后被死对头上了.txt", sex:"男", age:"24", tags:["bl", "死对头", "豪门", "年下"] },
+    { role:"陆景熯", file:"伪骨 bg.txt", sex:"男", age:"—", tags:["bl", "骨科", "伪骨", "救赎", "偏执"] },
+    { role:"梁惋", file:"梁惋（拉拉）.txt", sex:"女", age:"23", tags:["gl", "年上", "御姐", "现代"] },
+    { role:"尚璟宇", file:"bl 自闭症（投稿）.txt", sex:"男", age:"21", tags:["bl", "骨科", "救赎", "虐心", "现代"] },
+    { role:"谢瑜渊", file:"女配完整版.txt", sex:"男", age:"—", tags:["bl", "无限流", "修真", "古风"] },
+    { role:"宋箐逾", file:"失忆后联姻老公骗我说我特别爱他.txt", sex:"男", age:"—", tags:["bg", "高干", "失忆", "豪门", "现代"] },
+    { role:"浮屿（南山）", file:"丧尸 h向美化版.txt", sex:"男", age:"—", tags:["bl", "无限流", "末世", "现代"] },
+    { role:"东厂总督", file:"东厂总督是邻国太子.txt", sex:"男", age:"—", tags:["bl", "古风", "权谋", "年上"] },
+    { role:"ABO设定", file:"ABO  bg设定禁改bl.txt", sex:"—", age:"—", tags:["无cp向", "ABO", "世界观"] },
+    { role:"东厂 · 世界观", file:"东厂总督是邻国太子.txt", sex:"—", age:"—", tags:["无cp向", "古风", "权谋", "世界观"] },
+    { role:"江淮旭", file:"江淮旭.txt", sex:"男", age:"—", tags:["bl", "高干", "sm", "年上"] },
+    { role:"闻敛", file:"七七的世界.txt", sex:"男", age:"23", tags:["bl", "高干", "现代"] },
+    { role:"傅砚庭", file:"七七的世界.txt", sex:"男", age:"28", tags:["bl", "高干", "上位者", "年上"] },
+    { role:"江时烬", file:"七七的世界.txt", sex:"男", age:"22", tags:["bl", "年下", "现代", "偏执"] },
+    { role:"谢临渊", file:"七七的世界.txt", sex:"男", age:"17", tags:["bl", "穿书", "年下", "白切黑", "占有欲强"] },
+    { role:"穆玉爛", file:"穆玉爛.docx", sex:"男", age:"28", tags:["bg", "年上", "伪骨", "豪门", "现代"] },
+    { role:"商玙洝", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"男", age:"24", tags:["bl", "人外", "娱乐圈", "现代"] },
+    { role:"傅承渊", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"男", age:"29", tags:["bl", "高干", "豪门", "人外", "现代"] },
+    { role:"七情六欲 · 世界观", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"—", age:"—", tags:["无cp向", "人外", "玄幻", "世界观"] },
+    { role:"Q7综艺", file:"q7综艺.docx", sex:"—", age:"—", tags:["无cp向", "现代", "世界观"] },
+    { role:"穆尚化", file:"言出法随.docx", sex:"男", age:"47", tags:["无cp向", "团宠", "豪门", "年上", "现代"] },
+    { role:"陈毓", file:"言出法随.docx", sex:"女", age:"46", tags:["无cp向", "团宠", "豪门", "温柔", "现代"] },
+    { role:"穆淮旭", file:"言出法随.docx", sex:"男", age:"28", tags:["无cp向", "团宠", "豪门", "年上", "现代"] },
+    { role:"穆淮安", file:"言出法随.docx", sex:"男", age:"25", tags:["无cp向", "团宠", "豪门", "年上", "温柔"] },
+    { role:"穆锦", file:"言出法随.docx", sex:"女", age:"22", tags:["无cp向", "团宠", "豪门", "现代", "嘴硬心软"] },
+    { role:"言出法随 · 世界观", file:"言出法随.docx", sex:"—", age:"—", tags:["无cp向", "团宠", "人外", "玄学", "悬疑", "世界观"] },
+    { role:"举报M设定", file:"举报m设定.docx", sex:"女", age:"18", tags:["sm", "现代", "强制"] }
   ]
 };
 </script>
@@ -992,6 +1117,16 @@ const SITE = {
       `<div class="grab"></div>
        <div class="sh-title">${esc(role)}</div>
        <div class="sh-sub">完整设定见百度网盘</div>
+
+       <div class="sh-save-warn">
+         <div class="sh-save-t">⚠️ 请先「转存」再下载</div>
+         <div class="sh-save-b">
+           网盘资源可能被恶意举报导致失效<br>
+           请务必<b>转存到自己网盘</b>并保存本地备份<br>
+           链接失效可凭抖音号或 QQ 找我补发
+         </div>
+       </div>
+
        <div class="sh-tags">${tagsHtml}</div>
        <div class="sh-note">
          网盘文件夹：<b>${esc(PAN.title||"设定合集")}</b><br>
@@ -1142,6 +1277,42 @@ const SITE = {
     if(p === "tip") renderTip();
   }
 
+  /* ---------- 关于作者：点击复制 ---------- */
+  function bindAbout(){
+    const wrap = $("#page-about");
+    if(!wrap) return;
+    wrap.addEventListener("click", (e)=>{
+      let node = e.target;
+      while(node && node !== wrap){
+        const cp = node.dataset && node.dataset.copy;
+        if(cp){
+          const btn = node;
+          const orig = btn.textContent;
+          const done = ()=>{
+            btn.textContent = "✓ 已复制";
+            setTimeout(()=>{ btn.textContent = orig; }, 1500);
+          };
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(cp).then(done).catch(()=> fallbackCopy2(cp, done));
+          } else fallbackCopy2(cp, done);
+          return;
+        }
+        node = node.parentNode;
+      }
+    });
+  }
+  function fallbackCopy2(txt, done){
+    const ta = document.createElement("textarea");
+    ta.value = txt;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand("copy"); }catch(e){}
+    if(ta.parentNode) ta.parentNode.removeChild(ta);
+    done();
+  }
+
   /* ---------- 打赏页 ---------- */
   function renderTip(){
     const box = $("#tipqr");
@@ -1172,17 +1343,14 @@ const SITE = {
     });
   }
 
-  // 速览页每条只显示 2-3 个标签
+  // 速览页每条显示 2-3 个标签（tags 与 cats 同源，直接取前几个）
   function briefTags(it){
-    const cs = CATS[it.role] || [];
-    const out = [];
-    cs.forEach(c=>{ if(out.length < 1) out.push(c); });
-    // 再补 1-2 个普通标签（跳过纯数字/身高类）
     const skip = /^\d+$|^1:1000$|^S级$|^m$|^gb$/i;
-    for(const t of it.tags){
+    const src = (it.tags && it.tags.length) ? it.tags : (CATS[it.role] || []);
+    const out = [];
+    for(const t of src){
       if(out.length >= 3) break;
       if(skip.test(t)) continue;
-      if(cs.includes(t)) continue;
       if(!out.includes(t)) out.push(t);
     }
     return out.slice(0, 3);
@@ -1382,6 +1550,7 @@ const SITE = {
   bindBrief();
   renderBrief();
   initFooter();
+  bindAbout();
   initGate();
   switchPage("home");   // 确保首页激活，避免 HTML class 失误导致白屏
 })();
