@@ -511,6 +511,16 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 }
 .feedback-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .feedback-btn:active{transform:scale(.99)}
+
+/* 重新查看声明按钮 */
+.view-gate-btn{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  width:100%;margin-top:11px;padding:10px;
+  background:var(--card);border:1px solid var(--line);
+  color:var(--dim);border-radius:11px;cursor:pointer;
+  font-size:13px;font-family:inherit;transition:.15s;
+}
+.view-gate-btn:hover{border-color:var(--accent);color:var(--accent)}
 .about-tip{
   text-align:center;font-size:11.5px;color:var(--dim2);
   line-height:1.8;margin-top:16px;opacity:.85;
@@ -668,7 +678,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
     </div>
 
     <div class="gate-countdown" id="gcountdown">
-      请仔细阅读 · <b id="gsec">5</b> 秒后可同意
+      请仔细阅读 · <b id="gsec">15</b> 秒后可同意
     </div>
 
     <button id="gagree" class="gate-btn" disabled>
@@ -838,6 +848,11 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
         有问题、想反馈、想买付费设定，都可以直接找我<br>
         <b>除我之外收钱的都是骗子</b>
       </div>
+
+      <button id="viewgate" class="view-gate-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        重新查看使用声明
+      </button>
     </div>
 
     <div class="about-tip">
@@ -1332,6 +1347,13 @@ const SITE = {
   function bindAbout(){
     const wrap = $("#page-about");
     if(!wrap) return;
+
+    // 重新查看声明
+    const vg = $("#viewgate");
+    if(vg){
+      vg.addEventListener("click", ()=>{ openGate(); });
+    }
+
     wrap.addEventListener("click", (e)=>{
       let node = e.target;
       while(node && node !== wrap){
@@ -1553,44 +1575,66 @@ const SITE = {
     }
   }
 
-  /* ---------- 打开声明：读满 5 秒才能同意 ---------- */
-  const GATE_KEY = "shezhi_gate_agreed_v1";
+  /* ---------- 打开声明：每次打开都要读满 15 秒 ---------- */
+  const GATE_SECONDS = 15;
+  let gateTimer = null;
 
   function initGate(){
     const gate = $("#gate");
     if(!gate) return;
+    // 每次打开页面都显示声明，不记忆
+    openGate();
+  }
 
-    let agreed = false;
-    try{ agreed = localStorage.getItem(GATE_KEY) === "1"; }catch(e){ agreed = false; }
-    if(agreed){ gate.classList.add("hide"); return; }
-
+  // 打开声明（首次进入 or 手动重看）
+  function openGate(){
+    const gate = $("#gate");
+    if(!gate) return;
     const btn = $("#gagree");
-    const sec = $("#gsec");
     const cd  = $("#gcountdown");
-    let left = 5;
+    let left = GATE_SECONDS;
 
-    if(sec) sec.textContent = String(left);
+    // 重置状态
+    gate.classList.remove("hide");
+    if(btn){
+      btn.disabled = true;
+      btn.textContent = "我 已 知 晓 并 同 意";
+    }
+    if(cd){
+      cd.classList.remove("done");
+      cd.innerHTML = '请仔细阅读 · <b id="gsec">15</b> 秒后可同意';
+    }
+    const sec2 = $("#gsec");
+    if(sec2) sec2.textContent = String(GATE_SECONDS);
+    document.body.style.overflow = "hidden";
 
-    const timer = setInterval(()=>{
+    if(gateTimer) clearInterval(gateTimer);
+    gateTimer = setInterval(()=>{
       left--;
-      if(sec) sec.textContent = String(Math.max(0, left));
+      const s = $("#gsec");
+      if(s) s.textContent = String(Math.max(0, left));
       if(left <= 0){
-        clearInterval(timer);
-        if(btn) btn.disabled = false;
-        if(cd){
-          cd.classList.add("done");
-          cd.innerHTML = "✓ 已阅读完毕，可以继续";
+        clearInterval(gateTimer);
+        gateTimer = null;
+        const b = $("#gagree");
+        if(b) b.disabled = false;
+        const c = $("#gcountdown");
+        if(c){
+          c.classList.add("done");
+          c.innerHTML = "✓ 已阅读完毕，可以继续";
         }
       }
     }, 1000);
 
-    if(btn){
-      btn.addEventListener("click", ()=>{
-        if(btn.disabled) return;
-        try{ localStorage.setItem(GATE_KEY, "1"); }catch(e){}
+    const b2 = $("#gagree");
+    if(b2){
+      b2.onclick = ()=>{
+        if(b2.disabled) return;
+        // 每次打开都要重新阅读，不再记忆
         gate.classList.add("hide");
+        document.body.style.overflow = "";
         window.scrollTo({top:0,behavior:"auto"});
-      });
+      };
     }
   }
 
