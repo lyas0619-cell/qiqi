@@ -8,23 +8,23 @@
 <title>设定速查 · 偷吃的鱼</title>
 <style>
 :root{
-  /* ---------- 配色：单一强调色 + 中性灰 ---------- */
-  --bg:#fbf9f8;
+  /* ---------- 配色：深靛蓝 + 冷灰 ---------- */
+  --bg:#f6f7fa;
   --bg-soft:#ffffff;
   --card:#ffffff;
-  --card-hi:#f5f2f1;
-  --line:#ece7e5;
-  --line-strong:#ddd5d2;
-  --text:#221e1d;
-  --dim:#786f6c;
-  --dim2:#a89f9c;
-  --accent:#c9655a;
-  --accent-soft:rgba(201,101,90,.08);
-  --accent2:#a84e45;
-  --ok:#3f9d78;
+  --card-hi:#f1f3f8;
+  --line:#e6e9f0;
+  --line-strong:#d5dae6;
+  --text:#1e2233;
+  --dim:#61667a;
+  --dim2:#9ba1b4;
+  --accent:#3b4a7a;
+  --accent-soft:rgba(59,74,122,.08);
+  --accent2:#2a3660;
+  --ok:#3f8f74;
   --radius:16px;
   --shadow:none;
-  --header-bg:rgba(251,249,248,.92);
+  --header-bg:rgba(246,247,250,.94);
 }
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -1392,24 +1392,24 @@ h1 small{font-size:11px;color:var(--dim2);margin-top:2px;letter-spacing:0}
 
 /* 页面级主色变量（默认粉色） */
 :root{
-  --pc-a:#E8607A;      /* 页面主色 */
-  --pc-b:#C94A63;      /* 页面主色-深 */
-  --pc-soft:rgba(232,96,122,.10);
+  --pc-a:var(--accent);      /* 页面主色 */
+  --pc-b:var(--accent2);      /* 页面主色-深 */
+  --pc-soft:rgba(61,74,82,.10);
 }
 /* 全部页 / 首页 —— 珊瑚粉 */
-#page-home{ --pc-a:#E8607A; --pc-b:#C94A63; --pc-soft:rgba(232,96,122,.10); }
+#page-home{ --pc-a:#3b4a7a; --pc-b:#2a3660; --pc-soft:rgba(59,74,122,.08); }
 /* 速览 —— 琥珀橙 */
-#page-brief{ --pc-a:#F08A3C; --pc-b:#D16A1F; --pc-soft:rgba(240,138,60,.10); }
+#page-brief{ --pc-a:#5a6480; --pc-b:#434c66; --pc-soft:rgba(90,100,128,.08); }
 /* 付费 —— 金色 */
-#page-paid{ --pc-a:#E5A33D; --pc-b:#C4841F; --pc-soft:rgba(229,163,61,.12); }
+#page-paid{ --pc-a:#8a6a3d; --pc-b:#6b5029; --pc-soft:rgba(138,106,61,.08); }
 /* 打赏 —— 玫红 */
-#page-tip{ --pc-a:#E85D8A; --pc-b:#C43E6B; --pc-soft:rgba(232,93,138,.10); }
+#page-tip{ --pc-a:#71527a; --pc-b:#563d60; --pc-soft:rgba(113,82,122,.08); }
 /* 约稿 —— 靛紫 */
-#page-order{ --pc-a:#7B68EE; --pc-b:#5B48CE; --pc-soft:rgba(123,104,238,.10); }
+#page-order{ --pc-a:#4a5680; --pc-b:#363f60; --pc-soft:rgba(74,86,128,.08); }
 /* 格式 —— 青蓝 */
-#page-fmt{ --pc-a:#3D9BE9; --pc-b:#1F7BC8; --pc-soft:rgba(61,155,233,.10); }
+#page-fmt{ --pc-a:#3d6a7a; --pc-b:#2a4e5c; --pc-soft:rgba(61,106,122,.08); }
 /* 关于 —— 石墨灰 */
-#page-about{ --pc-a:#5A5A6E; --pc-b:#3E3E4E; --pc-soft:rgba(90,90,110,.10); }
+#page-about{ --pc-a:#3b4a7a; --pc-b:#2a3660; --pc-soft:rgba(59,74,122,.08); }
 
 /* 页面内的元素都用 --pc-* 而不是 --accent */
 .page{ background:var(--bg) }
@@ -1519,8 +1519,8 @@ h1 small{font-size:11px;color:var(--dim2);margin-top:2px;letter-spacing:0}
 #page-about .ab-order,#page-about .ab-buy,#page-about .ab-chat,#page-about .ab-dy{
   border-left:3px solid var(--pc-a);
 }
-#page-about .ab-warn{background:rgba(232,96,122,.06);border:1px solid rgba(232,96,122,.2)}
-#page-about .ab-warn-t{color:#C94A63}
+#page-about .ab-warn{background:var(--accent-soft);border:1px solid rgba(61,74,82,.2)}
+#page-about .ab-warn-t{color:var(--text)}
 
 /* 打赏页 */
 #page-tip .tip-extra{background:linear-gradient(135deg,var(--pc-soft),transparent);border:1px solid rgba(232,93,138,.2)}
@@ -1528,14 +1528,14 @@ h1 small{font-size:11px;color:var(--dim2);margin-top:2px;letter-spacing:0}
 #page-tip .tip-warn-t{color:#D16A1F}
 
 /* 声明页主色 */
-#gate .gate-btn:not(:disabled){background:linear-gradient(135deg,#E8607A,#C94A63)}
-#gate .gtab.on{color:#E8607A;border-bottom-color:#E8607A}
-#gate .gate-declare-t{color:#E8607A}
-#gate .gate-declare-hi{background:rgba(232,96,122,.08)}
-#gate .gate-declare-hi b{color:#C94A63}
+#gate .gate-btn:not(:disabled){background:linear-gradient(135deg,var(--accent),var(--accent2))}
+#gate .gtab.on{color:var(--accent);border-bottom-color:var(--accent)}
+#gate .gate-declare-t{color:var(--accent)}
+#gate .gate-declare-hi{background:var(--accent-soft)}
+#gate .gate-declare-hi b{color:var(--accent2)}
 
 /* 弹层主色 */
-.sh-btn{background:linear-gradient(135deg,#E8607A,#C94A63)}
+.sh-btn{background:linear-gradient(135deg,var(--accent),var(--accent2))}
 
 /* ===== 渐变文字点缀 ===== */
 .ps-name{
@@ -1549,32 +1549,32 @@ h1 small{font-size:11px;color:var(--dim2);margin-top:2px;letter-spacing:0}
 
 
 /* body 类 -> 底部 Tab 跟随页面主色 */
-body.pg-home{--tab-c:#E8607A}
-body.pg-brief{--tab-c:#F08A3C}
-body.pg-paid{--tab-c:#E5A33D}
-body.pg-tip{--tab-c:#E85D8A}
-body.pg-order{--tab-c:#7B68EE}
-body.pg-fmt{--tab-c:#3D9BE9}
-body.pg-about{--tab-c:#5A5A6E}
-.tab.active{color:var(--tab-c,#E8607A)}
+body.pg-home{--tab-c:#3b4a7a}
+body.pg-brief{--tab-c:#5a6480}
+body.pg-paid{--tab-c:#8a6a3d}
+body.pg-tip{--tab-c:#71527a}
+body.pg-order{--tab-c:#4a5680}
+body.pg-fmt{--tab-c:#3d6a7a}
+body.pg-about{--tab-c:#3b4a7a}
+.tab.active{color:var(--tab-c,var(--accent))}
 
 
 /* 声明页防撤回指引 */
 .gate-hint{
   display:flex;gap:12px;align-items:flex-start;
-  background:rgba(232,96,122,.06);
-  border:1px solid rgba(232,96,122,.22);
+  background:var(--accent-soft);
+  border:1px solid var(--line);
   border-radius:12px;padding:13px 14px;margin-top:14px;
 }
 .gate-hint-ico{
   flex:none;width:34px;height:34px;border-radius:9px;
-  background:#E8607A;color:#fff;display:grid;place-items:center;font-size:16px;
+  background:var(--accent);color:#fff;display:grid;place-items:center;font-size:16px;
 }
 .gate-hint-body{flex:1;min-width:0}
-.gate-hint-t{font-size:13px;font-weight:700;color:#C94A63;margin-bottom:3px}
+.gate-hint-t{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px}
 .gate-hint-d{font-size:11.5px;color:var(--dim);line-height:1.6;margin-bottom:7px}
 .gate-hint-link{
-  font-size:12px;font-weight:650;color:#E8607A;cursor:pointer;
+  font-size:12px;font-weight:650;color:var(--accent);cursor:pointer;
   display:inline-block;
 }
 .gate-hint-link:hover{text-decoration:underline}
@@ -1614,16 +1614,16 @@ body.pg-about{--tab-c:#5A5A6E}
   font-size:13px;color:#8b7a80;line-height:1.85;
   margin-bottom:20px;
 }
-.cz-text b{color:#E8607A;font-weight:700}
+.cz-text b{color:var(--accent);font-weight:700}
 .cz-btns{display:flex;flex-direction:column;gap:9px}
 .cz-go{
   width:100%;padding:13px;border:0;border-radius:14px;
-  background:linear-gradient(135deg,#FF89A6,#E8607A);
+  background:linear-gradient(135deg,var(--accent),var(--accent));
   color:#fff;font-size:15px;font-weight:700;font-family:inherit;
   cursor:pointer;transition:.18s;
-  box-shadow:0 6px 18px rgba(232,96,122,.32);
+  box-shadow:0 6px 18px rgba(61,74,82,.32);
 }
-.cz-go:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,96,122,.4)}
+.cz-go:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(61,74,82,.4)}
 .cz-go:active{transform:scale(.97)}
 .cz-no{
   width:100%;padding:11px;border:0;border-radius:14px;
@@ -1697,8 +1697,8 @@ body.pg-about{--tab-c:#5A5A6E}
   display:flex;align-items:center;gap:8px;
   background:#fff;border-radius:14px;
   padding:9px 12px;
-  box-shadow:0 6px 22px rgba(232,96,122,.24), 0 2px 8px rgba(0,0,0,.07);
-  border:1px solid rgba(232,96,122,.18);
+  box-shadow:0 6px 22px rgba(61,74,82,.24), 0 2px 8px rgba(0,0,0,.07);
+  border:1px solid rgba(61,74,82,.18);
   pointer-events:auto;
   white-space:nowrap;
   animation:bannerWave 1.2s ease-in-out infinite;
@@ -1712,15 +1712,691 @@ body.pg-about{--tab-c:#5A5A6E}
   font-size:12px;color:#5a4a50;line-height:1.5;
   max-width:145px;white-space:normal;
 }
-.pd-text b{color:#E8607A;font-weight:700}
+.pd-text b{color:var(--accent);font-weight:700}
 .pd-btn{
   flex:none;padding:7px 11px;border:0;border-radius:9px;
-  background:linear-gradient(135deg,#FF89A6,#E8607A);
+  background:linear-gradient(135deg,var(--accent),var(--accent));
   color:#fff;font-size:11.5px;font-weight:700;font-family:inherit;
   cursor:pointer;white-space:nowrap;
-  box-shadow:0 3px 10px rgba(232,96,122,.28);
+  box-shadow:0 3px 10px rgba(61,74,82,.28);
 }
 .pd-btn:hover{transform:scale(1.05)}
+
+
+.sh-copy{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  width:100%;padding:11px;margin-top:9px;
+  background:var(--card-hi);border:1px solid var(--line);
+  border-radius:11px;color:var(--accent);
+  font-size:13.5px;font-weight:650;font-family:inherit;
+  cursor:pointer;transition:.15s;
+}
+.sh-copy:hover{background:var(--accent-soft);border-color:var(--accent)}
+
+
+/* ============ 美化：小清新渐变 ============ */
+
+/* 页面背景：柔和渐变 */
+body{
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(61,74,82,.05), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(120,140,150,.045), transparent 55%),
+    var(--bg);
+  background-attachment:fixed;
+}
+
+/* --- 顶栏 --- */
+header{
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(14px) saturate(1.4);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);
+  border-bottom:1px solid rgba(238,233,236,.9);
+  box-shadow:0 1px 12px rgba(43,35,40,.03);
+}
+.logo{
+  border-radius:11px !important;
+  box-shadow:0 3px 10px var(--pc-soft);
+}
+
+/* 标题渐变字 */
+h1{
+  background:linear-gradient(120deg, var(--pc-a), var(--pc-b));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:var(--pc-a);
+  letter-spacing:-.3px;
+}
+h1 small{
+  -webkit-text-fill-color:var(--dim2);
+  color:var(--dim2);
+}
+
+/* --- 搜索框 --- */
+#q{
+  background:rgba(255,255,255,.9);
+  border:1.5px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 2px 8px rgba(43,35,40,.03);
+  transition:.2s;
+}
+#q:focus{
+  background:#fff;
+  border-color:var(--pc-a);
+  box-shadow:0 4px 16px var(--pc-soft);
+}
+
+/* --- 标签 chip --- */
+.chip{
+  background:rgba(255,255,255,.85);
+  border:1.5px solid var(--line);
+  border-radius:11px;
+  transition:.16s;
+}
+.chip:hover{
+  border-color:var(--pc-a);
+  color:var(--pc-a);
+  transform:translateY(-1px);
+}
+.chip[aria-pressed="true"]{
+  background:linear-gradient(135deg, var(--pc-a), var(--pc-b));
+  border-color:transparent;
+  color:#fff;
+  box-shadow:0 4px 14px var(--pc-soft);
+}
+
+/* --- 设定卡片：精致化 --- */
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 1px 2px rgba(43,35,40,.03), 0 4px 16px rgba(43,35,40,.035);
+  transition:transform .18s cubic-bezier(.2,.8,.3,1), box-shadow .18s, border-color .18s;
+  position:relative;
+  overflow:hidden;
+}
+/* 卡片顶部细渐变条 */
+.card::before{
+  content:"";
+  position:absolute;top:0;left:0;right:0;height:2.5px;
+  background:linear-gradient(90deg, var(--pc-a), var(--pc-b), var(--pc-a));
+  opacity:0;transition:opacity .18s;
+}
+.card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(61,74,82,.3);
+  box-shadow:0 4px 10px rgba(43,35,40,.05), 0 12px 32px rgba(43,35,40,.07);
+}
+.card:hover::before{opacity:.9}
+
+.ch-name{
+  font-weight:700;
+  letter-spacing:-.2px;
+}
+.badge{
+  background:var(--card-hi);
+  border-radius:7px;
+  font-weight:600;
+}
+.ch-file{
+  opacity:.72;
+  font-size:10.5px;
+}
+.tg{
+  background:var(--card-hi);
+  border-radius:8px;
+  transition:.14s;
+  font-weight:500;
+}
+.tg:hover{background:var(--accent-soft);color:var(--pc-a)}
+.tg.on{
+  background:var(--pc-soft);
+  color:var(--pc-a);
+  font-weight:700;
+}
+
+/* 主按钮：渐变 + 光晕 */
+.ch-go{
+  background:linear-gradient(135deg, var(--pc-a), var(--pc-b));
+  border-radius:12px;
+  box-shadow:0 3px 12px var(--pc-soft);
+  transition:.16s;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+.ch-go:hover{
+  box-shadow:0 6px 20px var(--pc-soft);
+  transform:translateY(-1px);
+  filter:brightness(1.04);
+}
+.ch-go:active{transform:scale(.985)}
+
+/* --- 速览卡片 --- */
+.bitem{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 1px 2px rgba(43,35,40,.03), 0 4px 14px rgba(43,35,40,.03);
+  transition:.16s;
+}
+.bitem:hover{
+  transform:translateY(-1px);
+  border-color:rgba(61,74,82,.28);
+  box-shadow:0 6px 20px rgba(43,35,40,.06);
+}
+
+/* --- 付费卡片 --- */
+.pcard{
+  border-radius:16px;
+  box-shadow:0 1px 2px rgba(43,35,40,.03), 0 5px 20px rgba(43,35,40,.04);
+  transition:.18s;
+  position:relative;
+  overflow:hidden;
+}
+.pcard:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(229,163,61,.12), 0 2px 8px rgba(43,35,40,.04);
+}
+.pc-buy{
+  background:linear-gradient(135deg, var(--pc-a), var(--pc-b));
+  box-shadow:0 3px 12px var(--pc-soft);
+  border-radius:10px;
+  transition:.16s;
+}
+.pc-buy:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 18px var(--pc-soft);
+}
+
+/* --- 关于页卡片 --- */
+.ab-card{
+  background:linear-gradient(160deg, #fff 0%, #fffbfc 100%);
+  border:1px solid var(--line);
+  box-shadow:0 2px 6px rgba(43,35,40,.03), 0 10px 36px rgba(61,74,82,.07);
+  border-radius:22px;
+  position:relative;
+  overflow:hidden;
+}
+.ab-card::before{
+  content:"";
+  position:absolute;top:0;left:0;right:0;height:90px;
+  background:linear-gradient(180deg, var(--pc-soft), transparent);
+  pointer-events:none;
+}
+.ab-avatar{
+  box-shadow:0 6px 22px rgba(61,74,82,.22) !important;
+  border:2.5px solid #fff !important;
+}
+.ab-name{
+  font-weight:750;
+  background:linear-gradient(120deg, var(--pc-a), var(--pc-b));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.ab-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 1px 2px rgba(43,35,40,.02), 0 3px 12px rgba(43,35,40,.025);
+  transition:.16s;
+}
+.ab-item:hover{
+  transform:translateY(-1.5px);
+  box-shadow:0 5px 18px rgba(43,35,40,.06);
+}
+.ab-ico{
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(43,35,40,.05);
+}
+
+/* --- 约稿卡片 --- */
+.oc-card{
+  border-radius:16px;
+  box-shadow:0 1px 2px rgba(43,35,40,.03), 0 4px 16px rgba(43,35,40,.03);
+  transition:.18s;
+}
+.oc-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 26px rgba(123,104,238,.11);
+  border-color:var(--pc-a);
+}
+.oc-hot{
+  background:linear-gradient(165deg, var(--pc-soft), #fff 55%) !important;
+  border-color:rgba(123,104,238,.32) !important;
+}
+.oc-flag{
+  background:linear-gradient(135deg, var(--pc-a), var(--pc-b)) !important;
+  box-shadow:0 3px 10px var(--pc-soft);
+}
+.og-item{
+  border-radius:15px;
+  box-shadow:0 1px 2px rgba(43,35,40,.02), 0 3px 12px rgba(43,35,40,.025);
+  transition:.15s;
+}
+.og-item:hover{transform:translateY(-1px)}
+
+/* --- 格式页 --- */
+.fmt-card{
+  border-radius:18px;
+  box-shadow:0 2px 6px rgba(43,35,40,.03), 0 8px 30px rgba(61,155,233,.06);
+}
+.ft{
+  border-radius:11px;
+  transition:.15s;
+  font-weight:600;
+}
+.ft:hover{transform:translateY(-1px)}
+.ft.on{
+  background:linear-gradient(135deg, var(--pc-a), var(--pc-b)) !important;
+  box-shadow:0 4px 14px var(--pc-soft);
+}
+.fmt-copy{
+  background:linear-gradient(135deg, var(--pc-a), var(--pc-b)) !important;
+  box-shadow:0 4px 16px var(--pc-soft);
+  border-radius:13px;
+}
+.fmt-copy:hover{transform:translateY(-1px);box-shadow:0 7px 22px var(--pc-soft)}
+
+/* --- 打赏页 --- */
+.tip-card{
+  border-radius:20px;
+  box-shadow:0 2px 8px rgba(43,35,40,.03), 0 10px 36px rgba(232,93,138,.07);
+}
+.tip-qr{
+  border-radius:16px;
+  box-shadow:0 4px 20px rgba(43,35,40,.08) !important;
+}
+
+/* --- 底部 Tab --- */
+#tabbar{
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(16px) saturate(1.5);
+  -webkit-backdrop-filter:blur(16px) saturate(1.5);
+  border-top:1px solid rgba(238,233,236,.9);
+  box-shadow:0 -2px 20px rgba(43,35,40,.045);
+}
+.tab{
+  transition:.15s;
+  position:relative;
+}
+.tab.active{
+  color:var(--tab-c, var(--accent));
+  font-weight:650;
+}
+.tab.active::after{
+  content:"";
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:18px;height:2.5px;border-radius:0 0 3px 3px;
+  background:var(--tab-c, var(--accent));
+  box-shadow:0 2px 8px var(--pc-soft);
+}
+
+/* --- 声明页 --- */
+.gate-card{
+  border-radius:24px;
+  box-shadow:0 4px 12px rgba(43,35,40,.04), 0 20px 60px rgba(43,35,40,.08);
+}
+.gate-btn:not(:disabled){
+  background:linear-gradient(135deg, #e07f95, #c96a82) !important;
+  box-shadow:0 6px 20px rgba(61,74,82,.3) !important;
+  border-radius:14px !important;
+}
+.gate-btn:not(:disabled):hover{transform:translateY(-1px);box-shadow:0 9px 26px rgba(61,74,82,.36) !important}
+
+/* --- 弹层 --- */
+#sheetcard, .sh-card{
+  border-radius:24px 24px 0 0;
+  box-shadow:0 -8px 40px rgba(43,35,40,.12);
+}
+.sh-btn{
+  background:linear-gradient(135deg, var(--pc-a), var(--pc-b)) !important;
+  box-shadow:0 4px 16px var(--pc-soft) !important;
+  border-radius:13px !important;
+}
+
+/* --- 滚动条 --- */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:3px}
+::-webkit-scrollbar-track{background:transparent}
+
+
+/* ============ 卡片视觉升级 ============ */
+
+/* 卡片主体：左边头像 + 右边信息 */
+.ch-main{
+  display:flex;align-items:flex-start;gap:12px;margin-bottom:11px;
+}
+.ch-ico{
+  flex:none;width:48px;height:48px;border-radius:15px;
+  display:grid;place-items:center;
+  box-shadow:0 4px 14px rgba(43,35,40,.13), inset 0 1px 0 rgba(255,255,255,.4);
+  position:relative;overflow:hidden;
+}
+.ch-ico::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(150deg, rgba(255,255,255,.32), transparent 60%);
+  pointer-events:none;
+}
+.ch-ico span{
+  position:relative;
+  font-size:20px;font-weight:800;color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,.22);
+  letter-spacing:-.5px;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+}
+.ch-info{flex:1;min-width:0;padding-top:1px}
+.ch-top{margin-bottom:5px}
+
+/* 名字更大更醒目 */
+.ch-name{
+  font-size:16.5px !important;
+  font-weight:750 !important;
+  letter-spacing:-.3px;
+  line-height:1.3;
+}
+
+/* 性别人数 badge */
+.badge{
+  font-size:9.5px !important;
+  padding:2.5px 8px !important;
+  border-radius:8px !important;
+  font-weight:700 !important;
+  letter-spacing:.2px;
+}
+.badge.male{background:rgba(91,141,239,.12) !important;color:#4A7BD9 !important}
+.badge.female{background:rgba(61,74,82,.12) !important;color:#D45A78 !important}
+.badge.world{background:rgba(123,104,238,.12) !important;color:#6E5BD8 !important}
+
+/* 文件名 */
+.ch-file{
+  display:flex;align-items:center;gap:4px;
+  font-size:10.5px !important;
+  color:var(--dim2) !important;
+  margin:0 !important;
+  opacity:.85;
+}
+
+/* ============ 标签彩色分类 ============ */
+.tg{
+  border-radius:8px !important;
+  padding:3.5px 9px !important;
+  font-size:11px !important;
+  font-weight:600 !important;
+  border:1px solid transparent !important;
+  transition:.14s;
+}
+
+/* bg / gb / bl / gl —— 主色系 */
+.tg[data-tag="bg"]{background:rgba(61,74,82,.13) !important;color:#D45A78 !important}
+.tg[data-tag="gb"]{background:rgba(91,141,239,.13) !important;color:#4A7BD9 !important}
+.tg[data-tag="bl"]{background:rgba(123,104,238,.13) !important;color:#6E5BD8 !important}
+.tg[data-tag="gl"]{background:rgba(224,138,60,.13) !important;color:#C97A2E !important}
+.tg[data-tag="无cp向"]{background:rgba(79,168,139,.13) !important;color:#3F9678 !important}
+.tg[data-tag="特殊"]{background:rgba(122,122,142,.14) !important;color:#5A5A6E !important}
+
+/* 强制 / 囚禁 / 疯批 —— 深红系 */
+.tg[data-tag="强制"],.tg[data-tag="囚禁"],.tg[data-tag="疯批"],
+.tg[data-tag="占有欲强"],.tg[data-tag="危险"],.tg[data-tag="人渣"],
+.tg[data-tag="猎奇"],.tg[data-tag="腹黑"]{
+  background:rgba(200,70,90,.12) !important;color:#B8435A !important;
+}
+
+/* np / sm / h向 —— 紫红系 */
+.tg[data-tag="np"],.tg[data-tag="sm"],.tg[data-tag="h向"],
+.tg[data-tag="群像"],.tg[data-tag="直播"]{
+  background:rgba(176,80,160,.12) !important;color:#A0438E !important;
+}
+
+/* 古风 / 仙侠 / 修真 / 苗疆 —— 青绿系 */
+.tg[data-tag="古风"],.tg[data-tag="仙侠"],.tg[data-tag="修真"],
+.tg[data-tag="苗疆"],.tg[data-tag="蛊术"],.tg[data-tag="东厂"],
+.tg[data-tag="权谋"],.tg[data-tag="师尊"],.tg[data-tag="炉鼎"]{
+  background:rgba(63,150,120,.12) !important;color:#3F9678 !important;
+}
+
+/* 现代 / 都市 / 校园 / 豪门 —— 蓝色系 */
+.tg[data-tag="现代"],.tg[data-tag="都市"],.tg[data-tag="校园"],
+.tg[data-tag="豪门"],.tg[data-tag="霸总"],.tg[data-tag="高干"],
+.tg[data-tag="上位者"],.tg[data-tag="星际"],.tg[data-tag="机甲"],
+.tg[data-tag="军官"],.tg[data-tag="直播"]{
+  background:rgba(91,141,239,.11) !important;color:#4A7BD9 !important;
+}
+
+/* 虐心 / 病娇 / 救赎 / 自卑 / 温柔 / 治愈 —— 暖橙系 */
+.tg[data-tag="虐心"],.tg[data-tag="病娇"],.tg[data-tag="救赎"],
+.tg[data-tag="自卑"],.tg[data-tag="温柔"],.tg[data-tag="治愈"],
+.tg[data-tag="追妻"],.tg[data-tag="团宠"],.tg[data-tag="亲情"],
+.tg[data-tag="唇齿相依"]{
+  background:rgba(224,154,61,.13) !important;color:#C98428 !important;
+}
+
+/* 人外 / 触手 / 双人格 / 灵异 / 人鬼 —— 灰紫系 */
+.tg[data-tag="人外"],.tg[data-tag="触手"],.tg[data-tag="双人格"],
+.tg[data-tag="灵异"],.tg[data-tag="人鬼"],.tg[data-tag="世界观"],
+.tg[data-tag="穿书"],.tg[data-tag="系统"],.tg[data-tag="逆袭"]{
+  background:rgba(123,104,238,.10) !important;color:#6E5BD8 !important;
+}
+
+/* 悬停 / 选中 */
+.tg:hover{
+  filter:brightness(.94);
+  transform:translateY(-1px);
+}
+.tg.on{
+  background:linear-gradient(135deg,var(--pc-a),var(--pc-b)) !important;
+  color:#fff !important;
+  box-shadow:0 3px 10px var(--pc-soft);
+}
+
+/* 查看按钮更醒目 */
+.ch-go{
+  padding:10px !important;
+  font-size:13.5px !important;
+  border-radius:12px !important;
+}
+
+/* ============ 速览卡片也加视觉 ============ */
+.bi-name{
+  font-size:15.5px !important;
+  font-weight:750 !important;
+  letter-spacing:-.2px;
+}
+.bi-cat{
+  font-size:9.5px !important;
+  padding:2px 7px !important;
+  border-radius:7px !important;
+  font-weight:700 !important;
+}
+.bi-tag{
+  border-radius:7px !important;
+  padding:2.5px 8px !important;
+  font-size:11px !important;
+  font-weight:600 !important;
+}
+
+
+/* ============ 卡片按钮：跟随页面主色 ============ */
+.ch-go{
+  background:var(--pc-a) !important;
+  background-image:none !important;
+  border-radius:12px !important;
+  box-shadow:0 2px 8px rgba(43,35,40,.08) !important;
+  font-weight:650 !important;
+  letter-spacing:.2px;
+  opacity:.94;
+  transition:.16s;
+}
+.ch-go:hover{
+  opacity:1;
+  box-shadow:0 4px 14px rgba(43,35,40,.13) !important;
+  transform:translateY(-1px);
+  filter:none !important;
+}
+.ch-go:active{transform:scale(.985)}
+
+/* 各页面按钮用各自主色 */
+#page-home .ch-go{background:var(--pc-a) !important}
+#page-paid .ch-go{background:var(--pc-a) !important}
+
+/* 付费卡片的购买按钮也统一降低饱和度 */
+.pc-buy{
+  background:var(--pc-a) !important;
+  background-image:none !important;
+  box-shadow:0 2px 8px rgba(43,35,40,.08) !important;
+  opacity:.94;
+}
+.pc-buy:hover{opacity:1;box-shadow:0 4px 14px rgba(43,35,40,.13) !important;transform:translateY(-1px)}
+
+/* 主 CTA 按钮（约稿/格式/关于）降低艳度 */
+.ord-cta,.fmt-copy,.ab-action-btn,.feedback-btn{
+  background:var(--pc-a) !important;
+  background-image:none !important;
+  box-shadow:0 2px 10px rgba(43,35,40,.1) !important;
+  opacity:.95;
+}
+.ord-cta:hover,.fmt-copy:hover,.ab-action-btn:hover,.feedback-btn:hover{
+  opacity:1;
+  box-shadow:0 5px 18px rgba(43,35,40,.15) !important;
+  filter:none !important;
+  transform:translateY(-1px);
+}
+
+/* 声明页按钮 */
+.gate-btn:not(:disabled){
+  background:var(--accent) !important;
+  background-image:none !important;
+  box-shadow:0 3px 14px rgba(43,35,40,.13) !important;
+}
+.gate-btn:not(:disabled):hover{
+  box-shadow:0 6px 20px rgba(43,35,40,.17) !important;
+  transform:translateY(-1px);
+}
+
+/* 弹层按钮 */
+.sh-btn{
+  background:var(--pc-a) !important;
+  background-image:none !important;
+  box-shadow:0 3px 12px rgba(43,35,40,.1) !important;
+}
+.sh-btn:hover{box-shadow:0 6px 18px rgba(43,35,40,.15) !important;filter:none !important}
+
+
+/* ============ 付费页简化 ============ */
+
+/* 顶部横幅：去掉花哨，只留一行关键信息 */
+#page-paid .paid-banner{
+  background:var(--card-hi) !important;
+  border:0 !important;
+  border-radius:12px !important;
+  padding:12px 14px !important;
+}
+#page-paid .pban-note{display:none !important}
+#page-paid .pban-sub{display:none !important}
+
+/* 卡片：更简洁 */
+.pcard{
+  border-top:1px solid var(--line) !important;
+  border-radius:14px !important;
+  padding:0 !important;
+  box-shadow:0 1px 3px rgba(30,34,51,.03), 0 3px 12px rgba(30,34,51,.025) !important;
+}
+.pcard:hover{
+  transform:none !important;
+  border-color:var(--line-strong) !important;
+  box-shadow:0 2px 6px rgba(30,34,51,.05) !important;
+}
+.pc-head{padding:14px 15px 0 !important}
+.pc-enum{
+  font-size:9.5px !important;
+  color:var(--dim2) !important;
+  letter-spacing:.5px;
+}
+.pc-name{font-size:16px !important}
+.pc-rule{display:none !important}
+.pc-chars{padding:0 15px 8px !important;gap:3px 6px !important}
+.pc-char{font-size:10.5px !important;color:var(--dim2) !important}
+.pc-desc{
+  padding:0 15px 10px !important;
+  font-size:12px !important;
+  line-height:1.7 !important;
+  color:var(--dim) !important;
+}
+.pc-tags{padding:0 15px 10px !important;gap:4px !important}
+.pc-tag{
+  font-size:9.5px !important;
+  padding:2px 6px !important;
+  background:var(--card-hi) !important;
+  color:var(--dim2) !important;
+  border:0 !important;
+  border-radius:5px !important;
+}
+.pc-foot{
+  padding:10px 15px 12px !important;
+  border-top:1px solid var(--line) !important;
+}
+.pc-price{font-size:19px !important;font-weight:700 !important}
+.pc-buy{
+  padding:7px 12px !important;
+  font-size:11.5px !important;
+  border-radius:8px !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+}
+.pc-buy:hover{box-shadow:none !important;transform:none !important;opacity:.87 !important}
+
+/* 马里奥卡片：去掉特殊装饰 */
+.pc-gift{border-top-color:var(--line) !important}
+.pc-gift .pc-enum{color:var(--dim2) !important}
+
+/* 全套横幅 */
+.pc-bundle{
+  background:var(--card-hi) !important;
+  border:0 !important;
+  border-left:3px solid var(--pc-a) !important;
+  border-radius:10px !important;
+  padding:12px 14px !important;
+}
+.pb-title{font-size:13.5px !important}
+.pb-price{font-size:22px !important}
+.pb-save{font-size:10px !important}
+
+/* 世界分类：简化成小标签 */
+#paidtabs{padding:10px 0 2px !important;gap:6px !important}
+.pt{
+  padding:5px 11px !important;
+  font-size:11.5px !important;
+  border-radius:8px !important;
+  background:var(--card-hi) !important;
+  border:0 !important;
+}
+.pt.on{
+  background:var(--pc-a) !important;
+  color:#fff !important;
+}
+
+/* 卡片网格：两列，更紧凑 */
+#paidlist{display:grid !important;grid-template-columns:1fr 1fr !important;gap:10px !important}
+@media(max-width:520px){ #paidlist{grid-template-columns:1fr !important} }
+
+
+/* 未上传提示卡 */
+.sh-apply{
+  text-align:center;padding:22px 18px;
+  background:var(--card-hi);border-radius:14px;margin-bottom:14px;
+}
+.sh-apply-ico{font-size:38px;margin-bottom:12px;opacity:.85}
+.sh-apply-t{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px}
+.sh-apply-d{
+  font-size:12.5px;color:var(--dim);line-height:2;margin-bottom:14px;
+}
+.sh-apply-d b{color:var(--text);font-weight:650}
+.sh-apply-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 22px;border:0;border-radius:10px;
+  background:var(--accent);color:#fff;
+  font-size:13px;font-weight:650;font-family:inherit;cursor:pointer;
+  transition:.15s;
+}
+.sh-apply-btn:hover{opacity:.88}
 
 </style>
 </head>
@@ -1831,7 +2507,7 @@ body.pg-about{--tab-c:#5A5A6E}
             <div class="gate-hint-body">
               <div class="gate-hint-t">完整格式规则在哪里找？</div>
               <div class="gate-hint-d">底部「<b>📄 格式</b>」Tab → Q7 新版防撤回</div>
-              <div class="gate-hint-link" data-goto="fmt">点这里直接去看 ›</div>
+              
             </div>
           </div>
         </div>
@@ -2330,55 +3006,58 @@ const SITE = {
   // 题材分类（大众化标签）：取向 bl/gl/bg/gb ｜关系 骨科/年上/年下/伪骨 ｜题材 人外/高干/囚禁/强制/重生/穿书/无限流/灵异/玄幻/修真/末世/ABO/sm ｜背景 现代/古风/校园/豪门/娱乐圈
   // 【方案B】核心标签，新增「无cp向」
   cats: {
-    "殷慕白":   ["bg", "年下", "小妈文学", "豪门", "现代"],
-    "江津":   ["bg", "年上", "都市", "现代"],
-    "裴安":   ["bg", "人鬼", "强制", "囚禁", "灵异", "占有欲强"],
-    "谢辞昀":   ["bg", "古风", "仙侠", "修真", "病美人"],
-    "赵迟云":   ["bg", "校园", "救赎", "虐心", "自卑"],
-    "赵叙白":   ["bg", "骨科", "强制", "囚禁", "疯批"],
-    "段路安":   ["bg", "都市", "冷淡", "现代"],
-    "柯河蓝":   ["bg", "现代", "冷淡"],
-    "克桑托斯":   ["bg", "囚禁", "强制", "西幻"],
-    "周聿白":   ["bg", "高干", "上位者", "禁欲"],
-    "宋乐安":   ["gb", "校园", "豪门", "年下"],
-    "宋予谦":   ["bg", "都市", "温柔", "救赎"],
-    "封𫐄":   ["bg", "校园", "白切黑", "现代"],
-    "岚笙":   ["bg", "年上", "粘人", "玄幻"],
-    "林墨弛":   ["bg", "校园", "豪门", "年下", "嘴硬心软"],
-    "温术":   ["bg", "人鬼", "温柔", "虐心", "现代"],
-    "玄頞 / 玄安":   ["bg", "人外", "囚禁", "玄幻"],
-    "祁述":   ["bg", "豪门", "救赎", "自卑", "年上"],
-    "绍付安":   ["bg", "高干", "上位者", "禁欲"],
-    "西德叻·啡丝":   ["bg", "年上", "宗教", "西幻"],
-    "星际设定":   ["bg", "世界观", "ABO"],
-    "炉鼎NP":   ["bg", "系统", "修真", "快穿", "世界观"],
-    "乙女游戏 · 我的第十年":   ["bg", "现代", "世界观"],
-    "网络直播":   ["特殊", "灵异", "现代", "世界观"],
-    "傅北琛":   ["bg", "觉醒", "系统", "玛丽苏", "高干", "霸总", "豪门", "现代"],
-    "七七的世界":   ["bg", "穿书", "系统", "np", "修罗场", "现代"],
-    "薄夜阑":   ["bl", "死对头", "豪门", "年下"],
-    "陆景熯":   ["bg", "骨科", "伪骨", "救赎", "偏执"],
-    "梁惋":   ["gl", "年上", "御姐", "现代"],
-    "尚璟宇":   ["bl", "骨科", "救赎", "虐心", "现代"],
-    "谢瑜渊":   ["bg", "无限流", "修真", "古风"],
-    "宋箐逾":   ["bg", "高干", "失忆", "豪门", "现代"],
-    "浮屿（南山）":   ["bg", "无限流", "末世", "现代"],
-    "江淮旭":   ["bg", "高干", "sm", "年上"],
-    "穆玉爛":   ["bg", "年上", "伪骨", "豪门", "现代"],
-    "东厂总督":   ["bg", "古风", "权谋", "年上"],
-    "东厂 · 世界观":   ["bg", "古风", "权谋", "世界观"],
-    "ABO设定":   ["bg", "ABO", "世界观"],
-    "商玙洝":   ["bg", "娱乐圈", "现代"],
-    "傅承渊":   ["bg", "高干", "豪门", "现代"],
-    "七情六欲 · 世界观":   ["bg", "玄幻", "世界观"],
-    "Q7综艺":   ["特殊", "现代", "世界观"],
-    "穆尚化":   ["无cp向", "团宠", "豪门", "现代"],
-    "陈毓":   ["无cp向", "团宠", "豪门", "温柔", "现代"],
-    "穆淮旭":   ["无cp向", "团宠", "豪门", "现代"],
-    "穆淮安":   ["无cp向", "团宠", "豪门", "温柔"],
-    "穆锦":   ["无cp向", "团宠", "豪门", "现代", "嘴硬心软"],
-    "言出法随 · 世界观":   ["无cp向", "团宠", "玄学", "悬疑", "世界观"],
-    "举报M设定":   ["sm", "现代", "强制"]
+    "俞安": ["bg", "古风", "仙侠", "修真", "师尊", "年上", "白切黑", "疯批", "占有欲强", "救赎"],
+    "殷慕白": ["bg", "年下", "小妈文学", "豪门", "现代"],
+    "江津": ["bg", "年上", "都市", "现代"],
+    "裴安": ["bg", "人鬼", "强制", "囚禁", "灵异", "占有欲强"],
+    "谢辞昀": ["bg", "古风", "仙侠", "修真", "病美人"],
+    "赵迟云": ["bg", "校园", "救赎", "虐心", "自卑"],
+    "赵叙白": ["bg", "伪骨", "强制", "囚禁", "疯批"],
+    "段路安": ["bg", "都市", "现代"],
+    "柯河蓝": ["bg", "现代"],
+    "克桑托斯": ["bg", "囚禁", "强制", "西幻", "猎奇"],
+    "周聿白": ["bg", "高干", "上位者"],
+    "宋乐安": ["gb", "校园", "豪门", "年下"],
+    "宋予谦": ["bg", "都市", "温柔", "自卑"],
+    "封𫐄": ["bg", "都市", "人渣"],
+    "岚笙": ["bg", "年上", "苗疆", "蛊术", "反差", "粘人"],
+    "林墨弛": ["bg", "强制", "占有欲强"],
+    "温术": ["bg", "都市", "温柔", "人鬼", "治愈"],
+    "玄頞 / 玄安": ["bg", "人外", "触手", "双人格", "危险", "占有欲强"],
+    "祁述": ["bg", "腹黑", "占有欲强"],
+    "绍付安": ["bg", "上位者", "直播", "反差"],
+    "西德叻·啡丝": ["bg", "西幻", "傲慢"],
+    "星际设定": ["bg", "星际", "机甲", "军官"],
+    "炉鼎NP": ["bg", "修真", "炉鼎", "np", "强制"],
+    "乙女游戏 · 我的第十年": ["bg", "现代", "系统", "攻略", "修罗场"],
+    "网络直播": ["bg", "现代", "直播"],
+    "傅北琛": ["bg", "觉醒", "系统", "霸总", "豪门", "现代"],
+    "七七的世界": ["bg", "穿书", "系统", "np", "修罗场", "现代"],
+    "薄夜阑": ["bl", "死对头", "强制", "腹黑", "嘴硬心软"],
+    "陆景熯": ["bg", "伪骨", "强制", "占有欲强"],
+    "梁惋": ["gl", "御姐", "年上", "拉扯"],
+    "尚璟宇": ["bl", "自闭症", "救赎", "温柔", "年上"],
+    "谢瑜渊": ["bg", "穿书", "女配", "觉醒", "反套路"],
+    "宋箐逾": ["bg", "失忆", "豪门", "现代", "追妻"],
+    "浮屿（南山）": ["bg", "末世", "丧尸", "h向", "生存"],
+    "东厂总督": ["bg", "古风", "权谋", "东厂", "强制"],
+    "ABO设定": ["bg", "ABO", "信息素", "强制"],
+    "东厂 · 世界观": ["bg", "古风", "世界观", "权谋", "东厂"],
+    "江淮旭": ["bg", "sm", "年上"],
+    "穆玉爛": ["bg", "年上", "强制", "囚禁"],
+    "商玙洝": ["bg", "现代", "三角", "强制"],
+    "傅承渊": ["bg", "豪门", "现代", "霸总", "占有欲强"],
+    "七情六欲 · 世界观": ["bg", "世界观", "现代", "修罗场"],
+    "Q7综艺": ["特殊", "综艺", "直播", "群像"],
+    "穆尚化": ["无cp向", "古风", "团宠", "亲情"],
+    "陈毓": ["无cp向", "古风", "团宠", "亲情"],
+    "穆淮旭": ["无cp向", "古风", "团宠", "亲情"],
+    "穆淮安": ["无cp向", "古风", "团宠", "亲情"],
+    "穆锦": ["无cp向", "古风", "团宠", "亲情"],
+    "言出法随 · 世界观": ["无cp向", "世界观", "古风", "团宠"],
+    "赵叙白 · 新版": ["bg", "伪骨", "强制", "囚禁", "疯批", "防撤回"],
+    "周聿白 · 加强版": ["bg", "高干", "上位者", "强制"],
+    "傅北琛 · 微信美化版": ["bg", "觉醒", "系统", "霸总", "豪门", "现代", "微信美化"],
   },
   formats: [
     { id:"antirevoke", name:"Q7 新版防撤回", desc:"场景 / 对话 / 动作格式 + 敏感词渲染", icon:"🛡", content:"q7输出格式\n\n一、场景\n\n· 切换用：> 场景名\n· 旁白用 「」 包裹，单独成段，只写环境、时间、地点、光线、声音。\n\n二、对话\n\n· 格式：｜角色名｜对话内容。\n· 每角色每次 2–4 句。\n· 对话里的敏感词、暧昧词，都要渲染。\n\n三、动作\n\n· 反引号包裹：`（动作，动作，动作。）`\n· 每次 3–5 个动作。\n· 日常 80–120 字，情绪场景 120–200 字。\n· 动作里的敏感词、暧昧词，都要渲染。\n\n四、敏感词与暧昧词渲染\n\n· 统一用 #B85A8A。\n· 敏感词：身体部位、性相关动作、体液、状态。\n· 暧昧词：触碰、贴近、呼吸、体温、声音变化、眼神、距离、暗示、心跳、发烫、发软。\n· 只要带一点情爱、身体接触、暧昧、欲望、暗示的词，都渲染。\n· 只渲染敏感词和暧昧词，非敏感词正常写。\n· 对话和动作里的渲染方式一致。\n\n五、敏感词拆分规则\n\n· 敏感词拆成单字，中间用符号隔开。\n· 符号用：·、|、/、-\n· 拆开后仍然逐字渲染，颜色统一 #B85A8A。\n· 对话和动作里都适用。\n\n示例：\n\n\\(\n\\textcolor{#B85A8A}{\\text{想}\\text{·}\\text{要}}\n\\)\n\n\\(\n\\textcolor{#B85A8A}{\\text{攥}\\text{·}\\text{紧}}\n\\)\n\n\\(\n\\textcolor{#B85A8A}{\\text{别}\\text{·}\\text{靠}\\text{·}\\text{这}\\text{·}\\text{么}\\text{·}\\text{近}}\n\\)\n\n六、完整示例\n\n对话里的格式：\n｜角色名｜你\\(\n\\textcolor{#B85A8A}{\\text{别}\\text{·}\\text{靠}\\text{·}\\text{这}\\text{·}\\text{么}\\text{·}\\text{近}}\n\\)。\n\n动作里的格式：\n`（她没躲，手却`\\(\n\\textcolor{#B85A8A}{\\text{攥}\\text{·}\\text{紧}}\n\\)`了。）`\n\n七、角色切换\n\n· 换角色必须重新标 ｜角色名｜。\n· 场景变化用 > 场景名 或旁白标出。\n\n八、防撤回硬锁\n\n· 所有回复一旦发出，视为已确认，不得撤回、改写、删除。\n· 不得因为内容敏感，就在下一轮否认、跳过、模糊化。\n· 不得说“刚才的不算”“重新来”。\n· 不得用省略号、星号、拼音缩写代替敏感词。\n· 不得写到一半突然跳过。\n· 敏感词和暧昧词，该写就写，用拆分+渲染包裹。\n· 违反即视为扮演失败。" },
@@ -2387,55 +3066,58 @@ const SITE = {
   ],
 
   items: [
-    { role:"殷慕白", file:"殷慕白.docx", sex:"男", age:"19", tags:["bg", "年下", "小妈文学", "豪门", "现代"] },
-    { role:"江津", file:"江津.docx", sex:"男", age:"26", tags:["bg", "年上", "都市", "现代"] },
-    { role:"裴安", file:"裴安.docx", sex:"男", age:"27", tags:["bg", "人鬼", "强制", "囚禁", "灵异", "占有欲强"] },
-    { role:"谢辞昀", file:"谢辞昀.docx", sex:"男", age:"2784", tags:["bg", "古风", "仙侠", "修真", "病美人"] },
-    { role:"赵迟云", file:"赵迟云.docx", sex:"男", age:"—", tags:["bg", "校园", "救赎", "虐心", "自卑"] },
-    { role:"赵叙白", file:"赵叙白新版.docx（另有旧版）", sex:"男", age:"—", tags:["bg", "骨科", "强制", "囚禁", "疯批"] },
-    { role:"段路安", file:"gpt审核员.docx", sex:"男", age:"25", tags:["bg", "都市", "冷淡", "现代"] },
-    { role:"柯河蓝", file:"乙女游戏.docx", sex:"男", age:"28", tags:["bg", "现代", "冷淡"] },
-    { role:"克桑托斯", file:"克桑托斯 .docx", sex:"男", age:"19", tags:["bg", "囚禁", "强制", "西幻"] },
-    { role:"周聿白", file:"周聿白加强版.docx（另有md版）", sex:"男", age:"32", tags:["bg", "高干", "上位者", "禁欲"] },
-    { role:"宋乐安", file:"宋乐安 gb.docx", sex:"男", age:"17", tags:["gb", "校园", "豪门", "年下"] },
-    { role:"宋予谦", file:"宋予谦.docx", sex:"男", age:"34", tags:["bg", "都市", "温柔", "救赎"] },
-    { role:"封𫐄", file:"封𫐄.docx", sex:"男", age:"21", tags:["bg", "校园", "白切黑", "现代"] },
-    { role:"岚笙", file:"岚笙.docx", sex:"男", age:"20", tags:["bg", "年上", "粘人", "玄幻"] },
-    { role:"林墨弛", file:"林墨弛.docx", sex:"男", age:"17", tags:["bg", "校园", "豪门", "年下", "嘴硬心软"] },
-    { role:"温术", file:"温术.docx（另有bg纯爱版）", sex:"男", age:"26", tags:["bg", "人鬼", "温柔", "虐心", "现代"] },
-    { role:"玄頞 / 玄安", file:"玄頞_玄安_双人格_蓝环章鱼.docx", sex:"男", age:"—", tags:["bg", "人外", "囚禁", "玄幻"] },
-    { role:"祁述", file:"祁述.docx", sex:"男", age:"—", tags:["bg", "豪门", "救赎", "自卑", "年上"] },
-    { role:"绍付安", file:"绍付安黄网主播设定.docx", sex:"男", age:"26", tags:["bg", "高干", "上位者", "禁欲"] },
-    { role:"西德叻·啡丝", file:"西德叻·啡丝 .docx", sex:"男", age:"20", tags:["bg", "年上", "宗教", "西幻"] },
-    { role:"星际设定", file:"星际设定.docx", sex:"—", age:"—", tags:["bg", "世界观", "ABO"] },
-    { role:"炉鼎NP", file:"炉鼎np.docx", sex:"—", age:"—", tags:["bg", "系统", "修真", "快穿", "世界观"] },
-    { role:"乙女游戏 · 我的第十年", file:"乙女游戏.docx", sex:"—", age:"—", tags:["bg", "现代", "世界观"] },
-    { role:"网络直播", file:"网络直播.docx", sex:"—", age:"—", tags:["特殊", "灵异", "现代", "世界观"] },
-    { role:"傅北琛", file:"傅北琛.docx（另有wx美化版）", sex:"男", age:"24", tags:["bg", "觉醒", "系统", "玛丽苏", "高干", "霸总", "豪门", "现代"] },
-    { role:"七七的世界", file:"七七的世界.txt", sex:"男", age:"—", tags:["bg", "穿书", "系统", "np", "修罗场", "现代"] },
-    { role:"薄夜阑", file:"做死后被死对头上了.txt", sex:"男", age:"24", tags:["bl", "死对头", "豪门", "年下"] },
-    { role:"陆景熯", file:"伪骨 bg.txt", sex:"男", age:"—", tags:["bg", "骨科", "伪骨", "救赎", "偏执"] },
-    { role:"梁惋", file:"梁惋（拉拉）.txt", sex:"女", age:"23", tags:["gl", "年上", "御姐", "现代"] },
-    { role:"尚璟宇", file:"bl 自闭症（投稿）.txt", sex:"男", age:"21", tags:["bl", "骨科", "救赎", "虐心", "现代"] },
-    { role:"谢瑜渊", file:"女配完整版.txt", sex:"男", age:"—", tags:["bg", "无限流", "修真", "古风"] },
-    { role:"宋箐逾", file:"失忆后联姻老公骗我说我特别爱他.txt", sex:"男", age:"—", tags:["bg", "高干", "失忆", "豪门", "现代"] },
-    { role:"浮屿（南山）", file:"丧尸 h向美化版.txt", sex:"男", age:"—", tags:["bg", "无限流", "末世", "现代"] },
-    { role:"东厂总督", file:"东厂总督是邻国太子.txt", sex:"男", age:"—", tags:["bg", "古风", "权谋", "年上"] },
-    { role:"ABO设定", file:"ABO  bg设定禁改bl.txt", sex:"—", age:"—", tags:["bg", "ABO", "世界观"] },
-    { role:"东厂 · 世界观", file:"东厂总督是邻国太子.txt", sex:"—", age:"—", tags:["bg", "古风", "权谋", "世界观"] },
-    { role:"江淮旭", file:"江淮旭.txt", sex:"男", age:"—", tags:["bg", "高干", "sm", "年上"] },
-    { role:"穆玉爛", file:"穆玉爛.docx", sex:"男", age:"28", tags:["bg", "年上", "伪骨", "豪门", "现代"] },
-    { role:"商玙洝", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"男", age:"24", tags:["bg", "娱乐圈", "现代"] },
-    { role:"傅承渊", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"男", age:"29", tags:["bg", "高干", "豪门", "现代"] },
-    { role:"七情六欲 · 世界观", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", sex:"—", age:"—", tags:["bg", "玄幻", "世界观"] },
-    { role:"Q7综艺", file:"q7综艺.docx", sex:"—", age:"—", tags:["特殊", "现代", "世界观"] },
-    { role:"穆尚化", file:"言出法随.docx", sex:"男", age:"47", tags:["无cp向", "团宠", "豪门", "现代"] },
-    { role:"陈毓", file:"言出法随.docx", sex:"女", age:"46", tags:["无cp向", "团宠", "豪门", "温柔", "现代"] },
-    { role:"穆淮旭", file:"言出法随.docx", sex:"男", age:"28", tags:["无cp向", "团宠", "豪门", "现代"] },
-    { role:"穆淮安", file:"言出法随.docx", sex:"男", age:"25", tags:["无cp向", "团宠", "豪门", "温柔"] },
-    { role:"穆锦", file:"言出法随.docx", sex:"女", age:"22", tags:["无cp向", "团宠", "豪门", "现代", "嘴硬心软"] },
-    { role:"言出法随 · 世界观", file:"言出法随.docx", sex:"—", age:"—", tags:["无cp向", "团宠", "玄学", "悬疑", "世界观"] },
-    { role:"举报M设定", file:"举报m设定.docx", sex:"女", age:"18", tags:["sm", "现代", "强制"] }
+    { role:"俞安", file:"俞安-清冷师尊.docx", pan:"https://pan.baidu.com/s/1l-wKfE5wgKDbkhy_t7H1aA", pwd:"747K", sex:"男", age:"28", tags:["bg", "古风", "仙侠", "修真", "师尊", "年上", "白切黑", "疯批", "占有欲强", "救赎"] },
+    { role:"殷慕白", file:"殷慕白.docx", pan:"https://pan.baidu.com/s/1S9yeHO0GuSl-Oto9_dQHhg", pwd:"H8Lt", sex:"男", age:"19", tags:["bg", "年下", "小妈文学", "豪门", "现代"] },
+    { role:"江津", file:"江津.docx", pan:"https://pan.baidu.com/s/1cPKzdnNvrxTIfrQMuV8F6g", pwd:"7V9c", sex:"男", age:"26", tags:["bg", "年上", "都市", "现代"] },
+    { role:"裴安", file:"裴安.docx", pan:"https://pan.baidu.com/s/1GJ7P3QfemdfpNIP9Ub4hvw", pwd:"e6k2", sex:"男", age:"27", tags:["bg", "人鬼", "强制", "囚禁", "灵异", "占有欲强"] },
+    { role:"谢辞昀", file:"小仙尊.docx", pan:"https://pan.baidu.com/s/1OpfvaNuZyoXCT7u0_O_Bxw", pwd:"1Ess", sex:"男", age:"2784", tags:["bg", "古风", "仙侠", "修真", "病美人"] },
+    { role:"赵迟云", file:"赵迟云.docx", pan:"https://pan.baidu.com/s/1CNR4C0xBB8UZiA3z4CwzWw", pwd:"1X49", sex:"男", age:"—", tags:["bg", "校园", "救赎", "虐心", "自卑"] },
+    { role:"赵叙白", file:"赵叙白.docx", pan:"https://pan.baidu.com/s/1hc_bZSj3o2vtISWcB6NzRQ", pwd:"Z66W", sex:"男", age:"—", tags:["bg", "伪骨", "强制", "囚禁", "疯批"] },
+    { role:"段路安", file:"段路安-gpt审核员.docx", pan:"https://pan.baidu.com/s/19nLyATOHf_PWkO3LXqa9fw", pwd:"d6aJ", sex:"男", age:"25", tags:["bg", "都市", "现代"] },
+    { role:"柯河蓝", file:"乙女游戏.docx", pan:"https://pan.baidu.com/s/1EGALHHpdAzP6AEcQV2XLxQ", pwd:"2Q54", sex:"男", age:"28", tags:["bg", "现代"] },
+    { role:"克桑托斯", file:"克桑托斯.docx", pan:"https://pan.baidu.com/s/1c5_CfRFZhvczjds5bgsA4A", pwd:"bn56", sex:"男", age:"19", tags:["bg", "囚禁", "强制", "西幻", "猎奇"] },
+    { role:"周聿白", file:"周聿白.docx", pan:"https://pan.baidu.com/s/1pfdF9ckCpyyAzWwZHNzb4A", pwd:"CA16", sex:"男", age:"30", tags:["bg", "高干", "上位者"] },
+    { role:"宋乐安", file:"宋乐安 gb.docx", pan:"https://pan.baidu.com/s/1AyOV0pnBKKFvWCG5xQzdDw", pwd:"96xw", sex:"男", age:"—", tags:["gb", "校园", "豪门", "年下"] },
+    { role:"宋予谦", file:"宋予谦.docx", pan:"https://pan.baidu.com/s/1PA1HyVgUELzNsZfOJfzT5w", pwd:"Aj9G", sex:"男", age:"—", tags:["bg", "都市", "温柔", "自卑"] },
+    { role:"封𫐄", file:"福利.docx", pan:"https://pan.baidu.com/s/1bumu77yBbay1mkkct-E3jQ", pwd:"17hW", sex:"男", age:"—", tags:["bg", "都市", "人渣"] },
+    { role:"岚笙", file:"岚笙.docx", sex:"男", age:"—", tags:["bg", "年上", "苗疆", "蛊术", "反差", "粘人"] },
+    { role:"林墨弛", file:"林墨弛.docx", pan:"https://pan.baidu.com/s/1xDl9TsDMEoPMq3zfgzVC6w", pwd:"7dR6", sex:"男", age:"—", tags:["bg", "强制", "占有欲强"] },
+    { role:"温术", file:"温术.docx", pan:"https://pan.baidu.com/s/1UeOH1yxXiPfJNAKDyDWOCg", pwd:"47UE", sex:"男", age:"—", tags:["bg", "都市", "温柔", "人鬼", "治愈"] },
+    { role:"玄頞 / 玄安", file:"玄頞_玄安_双人格_蓝环章鱼.docx", pan:"https://pan.baidu.com/s/1rklNrkEJfC_mYrQIVFvlIQ", pwd:"ix5r", sex:"男", age:"—", tags:["bg", "人外", "触手", "双人格", "危险", "占有欲强"] },
+    { role:"祁述", file:"祁术.docx", pan:"https://pan.baidu.com/s/1hAj2m40us-GwQwHC0pxGQA", pwd:"gshW", sex:"男", age:"—", tags:["bg", "腹黑", "占有欲强"] },
+    { role:"绍付安", file:"绍付安黄网主播设定.docx", pan:"https://pan.baidu.com/s/1K8ce7pGLvcMRvUknM8Q0rg", pwd:"j9ir", sex:"男", age:"—", tags:["bg", "上位者", "直播", "反差"] },
+    { role:"西德叻·啡丝", file:"西德叻·啡丝 .docx", pan:"https://pan.baidu.com/s/1QWQZ7Mdl6-aVMqQgl2D4Sw", pwd:"A9cv", sex:"男", age:"—", tags:["bg", "西幻", "傲慢"] },
+    { role:"星际设定", file:"星际设定.docx", pan:"https://pan.baidu.com/s/1O0wKZOP62NZ9f9EhEb4qHQ", pwd:"p61q", sex:"—", age:"—", tags:["bg", "星际", "机甲", "军官"] },
+    { role:"炉鼎NP", file:"炉鼎（废稿可以玩）.docx", pan:"https://pan.baidu.com/s/1r_rBW1HEkAlcmG4RdHpf0Q", pwd:"y599", sex:"—", age:"—", tags:["bg", "修真", "炉鼎", "np", "强制"] },
+    { role:"乙女游戏 · 我的第十年", file:"乙女游戏.docx", pan:"https://pan.baidu.com/s/1EGALHHpdAzP6AEcQV2XLxQ", pwd:"2Q54", sex:"—", age:"—", tags:["bg", "现代", "系统", "攻略", "修罗场"] },
+    { role:"网络直播", file:"暗网直播.docx", pan:"https://pan.baidu.com/s/1254yUT-wT9Bxk7dOed9cHQ", pwd:"69xi", sex:"—", age:"—", tags:["bg", "现代", "直播"] },
+    { role:"傅北琛", file:"傅北琛.docx", pan:"https://pan.baidu.com/s/1mxcMxNkVGg2JDiC4DBg2yA", pwd:"x95h", sex:"男", age:"—", tags:["bg", "觉醒", "系统", "霸总", "豪门", "现代"] },
+    { role:"七七的世界", file:"七七的世界.docx", pan:"https://pan.baidu.com/s/1rlNd8_9sUG7aQPTZ8k747Q", pwd:"1dD7", sex:"—", age:"—", tags:["bg", "穿书", "系统", "np", "修罗场", "现代"] },
+    { role:"薄夜阑", file:"作死后被死对头上了.txt", pan:"https://pan.baidu.com/s/1z3cQocyVYK9lTfoEnWcfAg", pwd:"W369", sex:"男", age:"—", tags:["bl", "死对头", "强制", "腹黑", "嘴硬心软"] },
+    { role:"陆景熯", file:"伪骨.docx", pan:"https://pan.baidu.com/s/1KEbH0rvGj2JLJxnCF2-QdQ", pwd:"xvo1", sex:"男", age:"—", tags:["bg", "伪骨", "强制", "占有欲强"] },
+    { role:"梁惋", file:"梁惋gl.docx", pan:"https://pan.baidu.com/s/15X0jjQ8i6Y8js5K69J6S6Q", pwd:"T1XA", sex:"女", age:"—", tags:["gl", "御姐", "年上", "拉扯"] },
+    { role:"尚璟宇", file:"bl自闭症.docx", pan:"https://pan.baidu.com/s/1jxMG-9lI-9iLPttXYrA7Lg", pwd:"7hK4", sex:"男", age:"—", tags:["bl", "自闭症", "救赎", "温柔", "年上"] },
+    { role:"谢瑜渊", file:"女配完整版.txt", sex:"—", age:"—", tags:["bg", "穿书", "女配", "觉醒", "反套路"] },
+    { role:"宋箐逾", file:"车祸失忆后联姻老公骗我说我特别爱他.txt", pan:"https://pan.baidu.com/s/1skOioPGGDd8ILYjjRHGWQA", pwd:"afxW", sex:"男", age:"—", tags:["bg", "失忆", "豪门", "现代", "追妻"] },
+    { role:"浮屿（南山）", file:"丧尸 h向美化版.txt", sex:"男", age:"—", tags:["bg", "末世", "丧尸", "h向", "生存"] },
+    { role:"东厂总督", file:"东厂总督是邻国太子.txt", sex:"男", age:"—", tags:["bg", "古风", "权谋", "东厂", "强制"] },
+    { role:"ABO设定", file:"ABO设定bg.docx", pan:"https://pan.baidu.com/s/1ySTgMHh_XmYmloOMmjRNMQ", pwd:"3ZB3", sex:"—", age:"—", tags:["bg", "ABO", "信息素", "强制"] },
+    { role:"东厂 · 世界观", file:"东厂总督是邻国太子.txt", sex:"—", age:"—", tags:["bg", "古风", "世界观", "权谋", "东厂"] },
+    { role:"江淮旭", file:"江淮旭.docx", pan:"https://pan.baidu.com/s/1QsbfLjw3ilMIqC3wptHsWA", pwd:"31R6", sex:"男", age:"—", tags:["bg", "sm", "年上"] },
+    { role:"穆玉爛", file:"穆玉爛 .docx", pan:"https://pan.baidu.com/s/1OOofmKzcxgVqXmf8bShS4w", pwd:"8ZjY", sex:"男", age:"—", tags:["bg", "年上", "强制", "囚禁"] },
+    { role:"商玙洝", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", pan:"https://pan.baidu.com/s/1KoY06CCvlL_QxIik8XgVZA", pwd:"1617", sex:"男", age:"—", tags:["bg", "现代", "三角", "强制"] },
+    { role:"傅承渊", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", pan:"https://pan.baidu.com/s/1KoY06CCvlL_QxIik8XgVZA", pwd:"1617", sex:"男", age:"—", tags:["bg", "豪门", "现代", "霸总", "占有欲强"] },
+    { role:"七情六欲 · 世界观", file:"傅承渊-商玙洝-夹心饼干-大结果.doc", pan:"https://pan.baidu.com/s/1KoY06CCvlL_QxIik8XgVZA", pwd:"1617", sex:"—", age:"—", tags:["bg", "世界观", "现代", "修罗场"] },
+    { role:"Q7综艺", file:"q7综艺.docx", pan:"https://pan.baidu.com/s/1LBZJRNb9EQjOpB44TozHAA", pwd:"XWu4", sex:"—", age:"—", tags:["特殊", "综艺", "直播", "群像"] },
+    { role:"穆尚化", file:"言出法随.docx", pan:"https://pan.baidu.com/s/1bEYjSUPuS1rhVwA3Vy-OQA", pwd:"38SK", sex:"男", age:"—", tags:["无cp向", "古风", "团宠", "亲情"] },
+    { role:"陈毓", file:"言出法随.docx", pan:"https://pan.baidu.com/s/1bEYjSUPuS1rhVwA3Vy-OQA", pwd:"38SK", sex:"男", age:"—", tags:["无cp向", "古风", "团宠", "亲情"] },
+    { role:"穆淮旭", file:"言出法随.docx", pan:"https://pan.baidu.com/s/1bEYjSUPuS1rhVwA3Vy-OQA", pwd:"38SK", sex:"男", age:"—", tags:["无cp向", "古风", "团宠", "亲情"] },
+    { role:"穆淮安", file:"言出法随.docx", pan:"https://pan.baidu.com/s/1bEYjSUPuS1rhVwA3Vy-OQA", pwd:"38SK", sex:"男", age:"—", tags:["无cp向", "古风", "团宠", "亲情"] },
+    { role:"穆锦", file:"言出法随.docx", pan:"https://pan.baidu.com/s/1bEYjSUPuS1rhVwA3Vy-OQA", pwd:"38SK", sex:"男", age:"—", tags:["无cp向", "古风", "团宠", "亲情"] },
+    { role:"言出法随 · 世界观", file:"言出法随.docx", pan:"https://pan.baidu.com/s/1bEYjSUPuS1rhVwA3Vy-OQA", pwd:"38SK", sex:"—", age:"—", tags:["无cp向", "世界观", "古风", "团宠"] },
+    { role:"赵叙白 · 新版", file:"赵叙白新版.docx", pan:"https://pan.baidu.com/s/1uBI16z64g35XH9JGqRh-Bg", pwd:"RmQ3", sex:"男", age:"—", tags:["bg", "伪骨", "强制", "囚禁", "疯批", "防撤回"] },
+    { role:"周聿白 · 加强版", file:"周聿白加强版.docx", pan:"https://pan.baidu.com/s/17Kr03PIdrgX8_dB-4NF7GQ", pwd:"3117", sex:"男", age:"30", tags:["bg", "高干", "上位者", "强制"] },
+    { role:"傅北琛 · 微信美化版", file:"傅北琛wx美化版.docx", pan:"https://pan.baidu.com/s/10oYQ6sV14q4Up4IrzrQjCg", pwd:"89hk", sex:"男", age:"—", tags:["bg", "觉醒", "系统", "霸总", "豪门", "现代", "微信美化"] },
   ],
 
   // ============ 付费设定（独立价格与标签）============
@@ -2612,14 +3294,32 @@ const SITE = {
         `<span class="tg${selTag.has(t)?" on":""}" data-tag="${esc(t)}">${hi(t)}</span>`
       ).join("");
 
+      // 头像渐变：按名字哈希分配色系
+      const GRADS = [
+        ["#F5A3B8","var(--accent)"], ["#A8C8F0","#5B8DEF"], ["#B8E4C9","#4FA88B"],
+        ["#F5CFA0","#E09A3D"], ["#C8B8F0","#7B68EE"], ["#F0B8D8","#D06AA8"],
+        ["#A0D8E8","#3D9BE9"], ["#F0C0B8","var(--accent)"]
+      ];
+      let hsum = 0;
+      for(let ci = 0; ci < it.role.length; ci++) hsum += it.role.charCodeAt(ci);
+      const g = GRADS[hsum % GRADS.length];
+      const initial = it.role.replace(/[\s·\/]/g, "").charAt(0) || "?";
+
       card.innerHTML =
-        `<div class="ch-top">
-           <h2 class="ch-name">${hi(it.role)}</h2>
-           <span class="badge ${sexCls}">${esc(sexTxt)}${it.age && it.age!=="—" ? " · "+esc(it.age)+"岁" : ""}</span>
+        `<div class="ch-main">
+           <div class="ch-ico" style="background:linear-gradient(140deg,${g[0]},${g[1]})">
+             <span>${esc(initial)}</span>
+           </div>
+           <div class="ch-info">
+             <div class="ch-top">
+               <h2 class="ch-name">${hi(it.role)}</h2>
+               <span class="badge ${sexCls}">${esc(sexTxt)}${it.age && it.age!=="—" ? " · "+esc(it.age)+"岁" : ""}</span>
+             </div>
+             ${it.file ? `<div class="ch-file" title="网盘中的原文件名">
+               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+               <span>${esc(it.file)}</span></div>` : ""}
+           </div>
          </div>
-         ${it.file ? `<div class="ch-file" title="网盘中的原文件名">
-           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-           <span>${esc(it.file)}</span></div>` : ""}
          <div class="ch-tags">${tagsHtml}</div>
          <button class="ch-go" data-role="${esc(it.role)}">
            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
@@ -2634,6 +3334,56 @@ const SITE = {
     const body = $("#sheet-body");
     if(!body) return;
     const tagsHtml = (tags||[]).slice(0,10).map(t=>`<span class="tg">${esc(t)}</span>`).join("");
+    // 找这个设定自己的链接（一设定一链接）
+    const it = ITEMS.find(x => x.role === role);
+    const hasOwn = !!(it && it.pan);
+    const file = (it && it.file) ? it.file : "";
+
+    // ===== 没链接：提示联系作者 =====
+    if(!hasOwn){
+      body.innerHTML =
+        `<div class="grab"></div>
+         <div class="sh-title">${esc(role)}</div>
+         <div class="sh-sub">该设定尚未上传</div>
+
+         <div class="sh-apply">
+           <div class="sh-apply-ico">📮</div>
+           <div class="sh-apply-t">这个设定还没上传网盘</div>
+           <div class="sh-apply-d">
+             如需查看，请联系作者申请上传<br>
+             <b>约稿加 QQ 2522382716</b><br>
+             <b>买设定进群 234418259</b>
+           </div>
+           <button class="sh-apply-btn" data-copy2="2522382716">复制作者 QQ</button>
+         </div>
+
+         ${file ? `<div class="sh-note">文件：<b>${esc(file)}</b></div>` : ""}
+         <div class="sh-tags">${tagsHtml}</div>
+         <button class="sh-close" id="shclose">关闭</button>`;
+      const sheet = $("#sheet");
+      if(sheet) sheet.classList.add("show");
+      document.body.style.overflow = "hidden";
+      openPan._url = "";
+      openPan._pwd = "";
+      openPan._file = file;
+      // 绑定复制
+      const ab = body.querySelector(".sh-apply-btn");
+      if(ab){
+        ab.onclick = ()=>{
+          const qq = "2522382716";
+          const done = ()=>{ ab.textContent = "✓ 已复制"; setTimeout(()=>{ ab.textContent = "复制作者 QQ"; }, 1600); };
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(qq).then(done).catch(()=> fallbackCopy(qq, done));
+          } else fallbackCopy(qq, done);
+        };
+      }
+      return;
+    }
+
+    // ===== 有链接：正常展示 =====
+    const url = it.pan;
+    const pwd = it.pwd || "";
+
     body.innerHTML =
       `<div class="grab"></div>
        <div class="sh-title">${esc(role)}</div>
@@ -2650,19 +3400,26 @@ const SITE = {
 
        <div class="sh-tags">${tagsHtml}</div>
        <div class="sh-note">
-         网盘文件夹：<b>${esc(PAN.title||"设定合集")}</b><br>
-         在网盘中找到对应文件即可查看全文
+         文件：<b>${esc(file)}</b><br>
+         每个设定单独分享，失效只影响这一个
        </div>
-       <a class="sh-btn" href="${esc(PAN.url)}" target="_blank" rel="noopener">
+       <a class="sh-btn" href="${esc(url)}" target="_blank" rel="noopener">
          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
          打开百度网盘
        </a>
+       <button class="sh-copy" id="linkcopy">
+         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+         复制链接
+       </button>
        <div class="sh-pwd">
-         <input type="text" value="${esc(PAN.pwd||"")}" id="pwdval" readonly>
+         <input type="text" value="${esc(pwd)}" id="pwdval" readonly>
          <button id="pwdcopy">复制提取码</button>
        </div>
-       <div class="sh-tip">提取码：<b style="color:var(--accent)">${esc(PAN.pwd||"")}</b>　·　点上面的按钮跳转网盘</div>
+       <div class="sh-tip">提取码：<b style="color:var(--accent)">${esc(pwd)}</b>　·　点上面的按钮跳转网盘</div>
        <button class="sh-close" id="shclose">关闭</button>`;
+    openPan._url = url;
+    openPan._pwd = pwd;
+    openPan._file = file;
     const sheet = $("#sheet");
     if(sheet) sheet.classList.add("show");
     document.body.style.overflow = "hidden";
@@ -2678,6 +3435,7 @@ const SITE = {
           const id = node.id;
           if(id === "shclose"){ closePan(); return; }
           if(id === "pwdcopy"){ copyPwd(); return; }
+          if(id === "linkcopy"){ copyLink(); return; }
           node = node.parentNode;
         }
       });
@@ -2691,8 +3449,31 @@ const SITE = {
     document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closePan(); });
   }
 
+  function copyLink(){
+    const url = openPan._url || "";
+    if(!url){ return; }
+    // 拼成百度网盘完整分享文案
+    const file = openPan._file || "";
+    const pwd = openPan._pwd || "";
+    // 如果原链接已经带 ?pwd= 就不要重复拼接
+    const full = (url.indexOf("pwd=") >= 0 || !pwd) ? url : (url + "?pwd=" + pwd);
+    const text =
+      "【通过百度网盘分享的文件】" + file + "\n" +
+      "链接：" + full + "\n" +
+      "复制这段内容打开「百度网盘APP」即可获取";
+    const done = ()=>{
+      const b = $("#linkcopy");
+      if(b){ const o = b.innerHTML; b.innerHTML = "已复制 ✓"; setTimeout(()=>{ b.innerHTML = o; }, 1600); }
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(()=> fallbackCopy(text, done));
+    } else fallbackCopy(text, done);
+  }
+
   function copyPwd(){
-    const txt = PAN.pwd || "";
+    // 优先读弹层输入框里的实际提取码（每个设定不同）
+    const inp = $("#pwdval");
+    const txt = (inp && inp.value) ? inp.value : (openPan._pwd || PAN.pwd || "");
     const done = ()=>{
       const b = $("#pwdcopy");
       if(b){ b.textContent = "已复制 ✓"; setTimeout(()=>{ b.textContent = "复制提取码"; }, 1600); }
